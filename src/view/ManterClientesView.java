@@ -8,12 +8,12 @@ package view;
  *
  * @author lucas.070395
  */
-public class ManterFuncionariosView extends javax.swing.JFrame {
+public class ManterClientesView extends javax.swing.JFrame {
 
     /**
      * Creates new form ManterFuncionariosView
      */
-    public ManterFuncionariosView() {
+    public ManterClientesView() {
         initComponents();
     }
 
@@ -28,39 +28,38 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaFuncionarios = new javax.swing.JList();
-        botaoFuncionarioCadastrar = new javax.swing.JButton();
-        botaoFuncionarioVisualizar = new javax.swing.JButton();
-        botaoFuncionarioEditar = new javax.swing.JButton();
-        botaoFuncionarioExcluir = new javax.swing.JButton();
+        listaClientes = new javax.swing.JList();
+        botaoClienteCadastrar = new javax.swing.JButton();
+        botaoClienteVisualizar = new javax.swing.JButton();
+        botaoClienteEditar = new javax.swing.JButton();
+        botaoClienteExcluir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        textAreaDadosFuncionario = new javax.swing.JTextArea();
+        textAreaDadosCliente = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Manter Funcionários");
-        setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));
         setResizable(false);
 
-        listaFuncionarios.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionários"));
-        listaFuncionarios.setModel(new javax.swing.AbstractListModel() {
+        listaClientes.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes"));
+        listaClientes.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(listaFuncionarios);
+        jScrollPane1.setViewportView(listaClientes);
 
-        botaoFuncionarioCadastrar.setText("Cadastrar");
+        botaoClienteCadastrar.setText("Cadastrar");
 
-        botaoFuncionarioVisualizar.setText("Visualizar");
+        botaoClienteVisualizar.setText("Visualizar");
 
-        botaoFuncionarioEditar.setText("Editar");
+        botaoClienteEditar.setText("Editar");
 
-        botaoFuncionarioExcluir.setText("Excluir");
+        botaoClienteExcluir.setText("Excluir");
 
-        textAreaDadosFuncionario.setColumns(20);
-        textAreaDadosFuncionario.setRows(5);
-        jScrollPane3.setViewportView(textAreaDadosFuncionario);
+        textAreaDadosCliente.setColumns(20);
+        textAreaDadosCliente.setRows(5);
+        jScrollPane3.setViewportView(textAreaDadosCliente);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -70,10 +69,10 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoFuncionarioCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addComponent(botaoFuncionarioVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoFuncionarioEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoFuncionarioExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(botaoClienteCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(botaoClienteVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoClienteEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoClienteExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addComponent(jScrollPane3)
         );
         jPanel2Layout.setVerticalGroup(
@@ -82,13 +81,13 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(botaoFuncionarioCadastrar)
+                        .addComponent(botaoClienteCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoFuncionarioVisualizar)
+                        .addComponent(botaoClienteVisualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoFuncionarioEditar)
+                        .addComponent(botaoClienteEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoFuncionarioExcluir)))
+                        .addComponent(botaoClienteExcluir)))
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE))
         );
@@ -134,14 +133,15 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManterFuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManterFuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManterFuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManterFuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /*
@@ -150,19 +150,19 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new ManterFuncionariosView().setVisible(true);
+                new ManterClientesView().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoFuncionarioCadastrar;
-    private javax.swing.JButton botaoFuncionarioEditar;
-    private javax.swing.JButton botaoFuncionarioExcluir;
-    private javax.swing.JButton botaoFuncionarioVisualizar;
+    private javax.swing.JButton botaoClienteCadastrar;
+    private javax.swing.JButton botaoClienteEditar;
+    private javax.swing.JButton botaoClienteExcluir;
+    private javax.swing.JButton botaoClienteVisualizar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JList listaFuncionarios;
-    private javax.swing.JTextArea textAreaDadosFuncionario;
+    private javax.swing.JList listaClientes;
+    private javax.swing.JTextArea textAreaDadosCliente;
     // End of variables declaration//GEN-END:variables
 }

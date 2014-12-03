@@ -4,9 +4,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="Manter Funcion&#xe1;rios"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[450, 400]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[450, 400]"/>
     </Property>
@@ -58,10 +55,10 @@
                   <Component id="jScrollPane1" min="-2" pref="317" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="botaoFuncionarioCadastrar" pref="103" max="32767" attributes="0"/>
-                      <Component id="botaoFuncionarioVisualizar" max="32767" attributes="0"/>
-                      <Component id="botaoFuncionarioEditar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="botaoFuncionarioExcluir" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoClienteCadastrar" pref="103" max="32767" attributes="0"/>
+                      <Component id="botaoClienteVisualizar" max="32767" attributes="0"/>
+                      <Component id="botaoClienteEditar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoClienteExcluir" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
@@ -73,13 +70,13 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="112" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="botaoFuncionarioCadastrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoClienteCadastrar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoFuncionarioVisualizar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoClienteVisualizar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="botaoFuncionarioEditar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoClienteEditar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoFuncionarioExcluir" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoClienteExcluir" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -96,11 +93,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="listaFuncionarios">
+            <Component class="javax.swing.JList" name="listaClientes">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Funcion&#xe1;rios"/>
+                    <TitledBorder title="Clientes"/>
                   </Border>
                 </Property>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
@@ -116,22 +113,22 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="botaoFuncionarioCadastrar">
+        <Component class="javax.swing.JButton" name="botaoClienteCadastrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoFuncionarioVisualizar">
+        <Component class="javax.swing.JButton" name="botaoClienteVisualizar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Visualizar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoFuncionarioEditar">
+        <Component class="javax.swing.JButton" name="botaoClienteEditar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoFuncionarioExcluir">
+        <Component class="javax.swing.JButton" name="botaoClienteExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
@@ -143,7 +140,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="textAreaDadosFuncionario">
+            <Component class="javax.swing.JTextArea" name="textAreaDadosCliente">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
