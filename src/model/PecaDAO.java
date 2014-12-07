@@ -12,16 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
  * @author Lucas
  */
-public class FuncionarioDAO {
+public class PecaDAO {
 
     private Connection conn = null;
 
-    public FuncionarioDAO() {
+    public PecaDAO() {
         try{
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,21 +32,16 @@ public class FuncionarioDAO {
             System.out.println(e);
         }//Fim try
     }
-
     
-    
-    public void cadastrar(Funcionario funcionario) {
+    public void cadastrar(Peca peca) {
         try {
 
             //Executa a query de inserção
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO funcionario (nome,idade, sexo, cpf, login, senha) VALUES (?,?,?,?,?,?)");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO peca (nome, descricao, idcliente) VALUES (?,?,?)");
 
-            pstmt.setString(1, funcionario.getNome());
-            pstmt.setInt(2, funcionario.getIdade());
-            pstmt.setString(3, funcionario.getSexo());
-            pstmt.setString(4, funcionario.getCpf());
-            pstmt.setString(5, funcionario.getLogin());
-            pstmt.setString(6, funcionario.getSenha());
+            pstmt.setString(1, peca.getNome());
+            pstmt.setString(2, peca.getDescricao());
+            pstmt.setInt(3, peca.getIdCliente());
 
             pstmt.execute();
 
@@ -57,26 +51,20 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public void alterar(Funcionario funcionario) {
+    public void alterar(Peca peca) {
         try {
 
             //Executa a query de alteração
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE funcionario SET "
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE peca SET "
                     + "nome = ? ,"
-                    + "idade = ?,"
-                    + "sexo = ? ,"
-                    + "cpf = ? ,"
-                    + "login = ? ,"
-                    + "senha = ? "
+                    + "descricao = ?,"
+                    + "idcliente = ? ,"
                     + "WHERE id = ? ");
 
-            pstmt.setString(1, funcionario.getNome());
-            pstmt.setInt(2, funcionario.getIdade());
-            pstmt.setString(3, funcionario.getSexo());
-            pstmt.setString(4, funcionario.getCpf());
-            pstmt.setString(5, funcionario.getLogin());
-            pstmt.setString(6, funcionario.getSenha());
-            pstmt.setInt(7, funcionario.getId());
+            pstmt.setString(1, peca.getNome());
+            pstmt.setString(2, peca.getDescricao());
+            pstmt.setInt(3, peca.getIdCliente());
+            pstmt.setInt(7, peca.getId());
 
             pstmt.execute();
 
@@ -87,14 +75,14 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public void excluir(Funcionario funcionario) {
+    public void excluir(Peca peca) {
         try {
 
             //Executa a query de exclusão
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM funcionario  "
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM peca  "
                     + "WHERE id = ? ");
 
-            pstmt.setInt(1, funcionario.getId());
+            pstmt.setInt(1, peca.getId());
 
             pstmt.execute();
 
@@ -104,13 +92,13 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public List<Funcionario> listar() {
+    public List<Peca> listar() {
 
         try {
             PreparedStatement pstmt;
-            List<Funcionario> listaFuncionarios = new ArrayList<>();
+            List<Peca> listaPecas = new ArrayList<>();
 
-            String sql = "select * from funcionario";
+            String sql = "select * from peca";
 
             // Cria a PreparedStatement com o SQL
             pstmt = conn.prepareStatement(sql);
@@ -120,18 +108,19 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Funcionario funcionario = new Funcionario(rs.getInt("id"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+                Peca peca = new Peca(rs.getInt("id"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("idcliente"));
                 // adicionando o objeto à lista
-                listaFuncionarios.add(funcionario);
+                listaPecas.add(peca);
             }
             rs.close();
             pstmt.close();
 
-            return listaFuncionarios;
+            return listaPecas;
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
+    
 }

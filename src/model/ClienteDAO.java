@@ -12,16 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
  * @author Lucas
  */
-public class FuncionarioDAO {
-
+public class ClienteDAO {
+    
     private Connection conn = null;
 
-    public FuncionarioDAO() {
+    public ClienteDAO() {
         try{
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,21 +32,19 @@ public class FuncionarioDAO {
             System.out.println(e);
         }//Fim try
     }
-
     
-    
-    public void cadastrar(Funcionario funcionario) {
+    public void cadastrar(Cliente cliente) {
         try {
 
             //Executa a query de inserção
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO funcionario (nome,idade, sexo, cpf, login, senha) VALUES (?,?,?,?,?,?)");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO cliente (nome,pessoa, cpf_cnpj, contato, login, senha) VALUES (?,?,?,?,?,?)");
 
-            pstmt.setString(1, funcionario.getNome());
-            pstmt.setInt(2, funcionario.getIdade());
-            pstmt.setString(3, funcionario.getSexo());
-            pstmt.setString(4, funcionario.getCpf());
-            pstmt.setString(5, funcionario.getLogin());
-            pstmt.setString(6, funcionario.getSenha());
+            pstmt.setString(1, cliente.getNome());
+            pstmt.setString(2, cliente.getPessoa());
+            pstmt.setString(3, cliente.getCpfCnpj());
+            pstmt.setString(4, cliente.getContato());
+            pstmt.setString(5, cliente.getLogin());
+            pstmt.setString(6, cliente.getSenha());
 
             pstmt.execute();
 
@@ -57,26 +54,26 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public void alterar(Funcionario funcionario) {
+    public void alterar(Cliente cliente) {
         try {
 
             //Executa a query de alteração
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE funcionario SET "
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE cliente SET "
                     + "nome = ? ,"
-                    + "idade = ?,"
-                    + "sexo = ? ,"
-                    + "cpf = ? ,"
+                    + "pessoa = ?,"
+                    + "cpf_cnpj = ? ,"
+                    + "contato = ? ,"
                     + "login = ? ,"
                     + "senha = ? "
                     + "WHERE id = ? ");
 
-            pstmt.setString(1, funcionario.getNome());
-            pstmt.setInt(2, funcionario.getIdade());
-            pstmt.setString(3, funcionario.getSexo());
-            pstmt.setString(4, funcionario.getCpf());
-            pstmt.setString(5, funcionario.getLogin());
-            pstmt.setString(6, funcionario.getSenha());
-            pstmt.setInt(7, funcionario.getId());
+            pstmt.setString(1, cliente.getNome());
+            pstmt.setString(2, cliente.getPessoa());
+            pstmt.setString(3, cliente.getCpfCnpj());
+            pstmt.setString(4, cliente.getContato());
+            pstmt.setString(5, cliente.getLogin());
+            pstmt.setString(6, cliente.getSenha());
+            pstmt.setInt(7, cliente.getId());
 
             pstmt.execute();
 
@@ -87,14 +84,14 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public void excluir(Funcionario funcionario) {
+    public void excluir(Cliente cliente) {
         try {
 
             //Executa a query de exclusão
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM funcionario  "
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM cliente  "
                     + "WHERE id = ? ");
 
-            pstmt.setInt(1, funcionario.getId());
+            pstmt.setInt(1, cliente.getId());
 
             pstmt.execute();
 
@@ -104,13 +101,13 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    public List<Funcionario> listar() {
+    public List<Cliente> listar() {
 
         try {
             PreparedStatement pstmt;
-            List<Funcionario> listaFuncionarios = new ArrayList<>();
+            List<Cliente> listaClientes = new ArrayList<>();
 
-            String sql = "select * from funcionario";
+            String sql = "select * from cliente";
 
             // Cria a PreparedStatement com o SQL
             pstmt = conn.prepareStatement(sql);
@@ -120,18 +117,19 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Funcionario funcionario = new Funcionario(rs.getInt("id"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+                Cliente cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
                 // adicionando o objeto à lista
-                listaFuncionarios.add(funcionario);
+                listaClientes.add(cliente);
             }
             rs.close();
             pstmt.close();
 
-            return listaFuncionarios;
+            return listaClientes;
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
+    
 }
