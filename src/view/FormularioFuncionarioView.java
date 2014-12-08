@@ -34,8 +34,8 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         campoFuncionarioNome = new javax.swing.JTextField();
         campoFuncionarioIdade = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbSexoMasculino = new javax.swing.JRadioButton();
+        rbSexoFeminino = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         campoFuncionarioCpf = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -45,8 +45,8 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
         campoFuncionarioLogin = new javax.swing.JTextField();
         campoFuncionarioSenha = new javax.swing.JTextField();
         campoFuncionarioRepeteSenha = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botaoFuncionarioSalvar = new javax.swing.JButton();
+        botaoFuncionarioCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Formulário do Funcionário");
@@ -63,11 +63,11 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
 
         jLabel3.setText("Sexo:");
 
-        campoFuncionarioSexo.add(jRadioButton1);
-        jRadioButton1.setText("Masculino");
+        campoFuncionarioSexo.add(rbSexoMasculino);
+        rbSexoMasculino.setText("Masculino");
 
-        campoFuncionarioSexo.add(jRadioButton2);
-        jRadioButton2.setText("Feminino");
+        campoFuncionarioSexo.add(rbSexoFeminino);
+        rbSexoFeminino.setText("Feminino");
 
         jLabel4.setText("CPF:");
 
@@ -85,9 +85,9 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(rbSexoMasculino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2))
+                        .addComponent(rbSexoFeminino))
                     .addComponent(campoFuncionarioCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                     .addComponent(campoFuncionarioIdade)
                     .addComponent(campoFuncionarioNome))
@@ -107,8 +107,8 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rbSexoMasculino)
+                    .addComponent(rbSexoFeminino))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -159,9 +159,9 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Salvar");
+        botaoFuncionarioSalvar.setText("Salvar");
 
-        jButton2.setText("Cancelar");
+        botaoFuncionarioCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,9 +171,9 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoFuncionarioSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(botaoFuncionarioCancelar)
                 .addGap(9, 9, 9))
         );
         jPanel1Layout.setVerticalGroup(
@@ -184,8 +184,8 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(botaoFuncionarioSalvar)
+                    .addComponent(botaoFuncionarioCancelar))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -251,6 +251,8 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoFuncionarioCancelar;
+    private javax.swing.JButton botaoFuncionarioSalvar;
     private javax.swing.JTextField campoFuncionarioCpf;
     private javax.swing.JTextField campoFuncionarioIdade;
     private javax.swing.JTextField campoFuncionarioLogin;
@@ -258,8 +260,6 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
     private javax.swing.JTextField campoFuncionarioRepeteSenha;
     private javax.swing.JTextField campoFuncionarioSenha;
     private javax.swing.ButtonGroup campoFuncionarioSexo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -270,7 +270,7 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton rbSexoFeminino;
+    private javax.swing.JRadioButton rbSexoMasculino;
     // End of variables declaration//GEN-END:variables
 }

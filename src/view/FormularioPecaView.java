@@ -28,8 +28,8 @@ public class FormularioPecaView extends javax.swing.JFrame {
 
         campoFuncionarioSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botaoPecaSalvar = new javax.swing.JButton();
+        botaoPecaCancelar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         campoPecaNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -42,9 +42,9 @@ public class FormularioPecaView extends javax.swing.JFrame {
         setName("formularioFuncionario"); // NOI18N
         setResizable(false);
 
-        jButton1.setText("Salvar");
+        botaoPecaSalvar.setText("Salvar");
 
-        jButton2.setText("Cancelar");
+        botaoPecaCancelar.setText("Cancelar");
 
         jLabel8.setText("Nome");
 
@@ -60,9 +60,9 @@ public class FormularioPecaView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(264, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoPecaSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(botaoPecaCancelar)
                 .addGap(9, 9, 9))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -89,8 +89,8 @@ public class FormularioPecaView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(botaoPecaSalvar)
+                    .addComponent(botaoPecaCancelar))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -157,10 +157,10 @@ public class FormularioPecaView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoPecaCancelar;
+    private javax.swing.JButton botaoPecaSalvar;
     private javax.swing.ButtonGroup campoFuncionarioSexo;
     private javax.swing.JTextField campoPecaNome;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
