@@ -12,16 +12,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Lucas
  */
-public class PecaDAO {
+public class TrabalhoDAO {
 
     private Connection conn = null;
 
-    public PecaDAO() {
-        try{
+    public TrabalhoDAO() {
+        try {
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -32,16 +33,16 @@ public class PecaDAO {
             System.out.println(e);
         }//Fim try
     }
-    
-    public void cadastrar(Peca peca) {
+
+    public void cadastrar(Trabalho trabalho) {
         try {
 
             //Executa a query de inserção
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO peca (nome, descricao, idcliente) VALUES (?,?,?)");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO trabalho (idpeca, idfuncionario, data_entrega) VALUES (?,?,?)");
 
-            pstmt.setString(1, peca.getNome());
-            pstmt.setString(2, peca.getDescricao());
-            pstmt.setInt(3, peca.getIdCliente());
+            pstmt.setInt(1, trabalho.getIdPeca());
+            pstmt.setInt(2, trabalho.getIdFuncionario());
+            pstmt.setString(3, trabalho.getDataEntrega());
 
             pstmt.execute();
 
@@ -51,20 +52,22 @@ public class PecaDAO {
         }//Fim try
     }
 
-    public void alterar(Peca peca) {
+    public void alterar(Trabalho trabalho) {
         try {
 
             //Executa a query de alteração
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE peca SET "
-                    + "nome = ? ,"
-                    + "descricao = ?,"
-                    + "idcliente = ? ,"
-                    + "WHERE idpeca = ? ");
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE trabalho SET "
+                    + "idpeca = ? ,"
+                    + "idfuncionario = ?,"
+                    + "data_entrega = ? ,"
+                    + "horas_trabalhadas = ? ,"
+                    + "WHERE idtrabalho = ? ");
 
-            pstmt.setString(1, peca.getNome());
-            pstmt.setString(2, peca.getDescricao());
-            pstmt.setInt(3, peca.getIdCliente());
-            pstmt.setInt(4, peca.getId());
+            pstmt.setInt(1, trabalho.getIdPeca());
+            pstmt.setInt(2, trabalho.getIdFuncionario());
+            pstmt.setString(3, trabalho.getDataEntrega());
+            pstmt.setInt(4, trabalho.getHorasTrabalhadas());
+            pstmt.setInt(5, trabalho.getId());
 
             pstmt.execute();
 
@@ -75,14 +78,14 @@ public class PecaDAO {
         }//Fim try
     }
 
-    public void excluir(Peca peca) {
+    public void excluir(Trabalho trabalho) {
         try {
 
             //Executa a query de exclusão
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM peca  "
-                    + "WHERE idpeca = ? ");
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM trabalho  "
+                    + "WHERE idtrabalho = ? ");
 
-            pstmt.setInt(1, peca.getId());
+            pstmt.setInt(1, trabalho.getId());
 
             pstmt.execute();
 
@@ -92,13 +95,13 @@ public class PecaDAO {
         }//Fim try
     }
 
-    public List<Peca> listar() {
+    public List<Trabalho> listar() {
 
         try {
             PreparedStatement pstmt;
-            List<Peca> listaPecas = new ArrayList<>();
+            List<Trabalho> listaTrabalhos = new ArrayList<>();
 
-            String sql = "select * from peca";
+            String sql = "select * from trabalho";
 
             // Cria a PreparedStatement com o SQL
             pstmt = conn.prepareStatement(sql);
@@ -108,19 +111,19 @@ public class PecaDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Peca peca = new Peca(rs.getInt("idpeca"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("idcliente"));
+                Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
                 // adicionando o objeto à lista
-                listaPecas.add(peca);
+                listaTrabalhos.add(trabalho);
             }
             rs.close();
             pstmt.close();
 
-            return listaPecas;
+            return listaTrabalhos;
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
-    
+
 }

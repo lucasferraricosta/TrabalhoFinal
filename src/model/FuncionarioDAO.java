@@ -68,7 +68,7 @@ public class FuncionarioDAO {
                     + "cpf = ? ,"
                     + "login = ? ,"
                     + "senha = ? "
-                    + "WHERE id = ? ");
+                    + "WHERE idfuncionario = ? ");
 
             pstmt.setString(1, funcionario.getNome());
             pstmt.setInt(2, funcionario.getIdade());
@@ -92,7 +92,7 @@ public class FuncionarioDAO {
 
             //Executa a query de exclusão
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM funcionario  "
-                    + "WHERE id = ? ");
+                    + "WHERE idfuncionario = ? ");
 
             pstmt.setInt(1, funcionario.getId());
 
@@ -120,7 +120,7 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Funcionario funcionario = new Funcionario(rs.getInt("id"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+                Funcionario funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
                 // adicionando o objeto à lista
                 listaFuncionarios.add(funcionario);
             }

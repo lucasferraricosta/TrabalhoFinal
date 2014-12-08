@@ -65,7 +65,7 @@ public class ClienteDAO {
                     + "contato = ? ,"
                     + "login = ? ,"
                     + "senha = ? "
-                    + "WHERE id = ? ");
+                    + "WHERE idcliente = ? ");
 
             pstmt.setString(1, cliente.getNome());
             pstmt.setString(2, cliente.getPessoa());
@@ -89,7 +89,7 @@ public class ClienteDAO {
 
             //Executa a query de exclusão
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM cliente  "
-                    + "WHERE id = ? ");
+                    + "WHERE idcliente = ? ");
 
             pstmt.setInt(1, cliente.getId());
 
@@ -117,7 +117,7 @@ public class ClienteDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Cliente cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
+                Cliente cliente = new Cliente(rs.getInt("idcliente"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
                 // adicionando o objeto à lista
                 listaClientes.add(cliente);
             }
