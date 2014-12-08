@@ -10,7 +10,7 @@ package model;
  * @author Lucas
  */
 public class Trabalho {
-    
+
     private int id;
     private int idPeca;
     private int idFuncionario;
@@ -64,7 +64,8 @@ public class Trabalho {
         this.dataEntrega = dataEntrega;
         this.horasTrabalhadas = horasTrabalhadas;
     }
-    
-    
-    
+
+    public Trabalho() {
+    }
+
 }

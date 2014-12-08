@@ -289,6 +289,15 @@ public class FormularioClienteView extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbPessoaFisica;
     private javax.swing.JRadioButton rbPessoaJuridica;
     // End of variables declaration//GEN-END:variables
+    private String acao;
+
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
 
     public JButton getBotaoClienteCancelar() {
         return botaoClienteCancelar;
@@ -333,7 +342,5 @@ public class FormularioClienteView extends javax.swing.JFrame {
     public JRadioButton getRbPessoaJuridica() {
         return rbPessoaJuridica;
     }
-
-    
 
 }

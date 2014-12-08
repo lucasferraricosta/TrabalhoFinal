@@ -10,7 +10,7 @@ package model;
  * @author Lucas
  */
 public class Funcionario {
-    
+
     private int id;
     private String nome;
     private int idade;
@@ -84,7 +84,8 @@ public class Funcionario {
         this.login = login;
         this.senha = senha;
     }
-    
-    
-    
+
+    public Funcionario() {
+    }
+
 }

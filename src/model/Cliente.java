@@ -10,7 +10,7 @@ package model;
  * @author Lucas
  */
 public class Cliente {
-    
+
     private int id;
     private String nome;
     private String pessoa;
@@ -84,7 +84,8 @@ public class Cliente {
         this.login = login;
         this.senha = senha;
     }
-    
-    
-    
+
+    public Cliente() {
+    }
+
 }

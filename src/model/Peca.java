@@ -10,7 +10,7 @@ package model;
  * @author Lucas
  */
 public class Peca {
-    
+
     private int id;
     private String nome;
     private String descricao;
@@ -54,7 +54,8 @@ public class Peca {
         this.descricao = descricao;
         this.idCliente = idCliente;
     }
-    
-    
-    
+
+    public Peca() {
+    }
+
 }

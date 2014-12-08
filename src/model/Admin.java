@@ -10,7 +10,7 @@ package model;
  * @author Lucas
  */
 public class Admin {
-    
+
     private String login;
     private String senha;
 
@@ -34,7 +34,9 @@ public class Admin {
         this.login = login;
         this.senha = senha;
     }
-    
-    
-    
+
+    public Admin() {
+
+    }
+
 }
