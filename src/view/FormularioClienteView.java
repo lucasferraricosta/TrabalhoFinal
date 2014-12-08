@@ -18,10 +18,16 @@ public class FormularioClienteView extends javax.swing.JFrame {
     /**
      * Creates new form FormularioFuncionarioView
      */
-    public FormularioClienteView() {
+    public FormularioClienteView(String acao) {
         initComponents();
+        this.setAcao(acao);
     }
-
+    
+    public FormularioClienteView(String acao, int idCliente){
+        initComponents();
+        this.setAcao(acao);
+        this.setIdCliente(idCliente);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -224,48 +230,6 @@ public class FormularioClienteView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the
-         * default look and feel. For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /*
-         * Create and display the form
-         */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new FormularioClienteView().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoClienteCancelar;
     private javax.swing.JButton botaoClienteSalvar;
@@ -290,7 +254,8 @@ public class FormularioClienteView extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbPessoaJuridica;
     // End of variables declaration//GEN-END:variables
     private String acao;
-
+    private int idCliente;
+    
     public String getAcao() {
         return acao;
     }
@@ -299,6 +264,14 @@ public class FormularioClienteView extends javax.swing.JFrame {
         this.acao = acao;
     }
 
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+  
     public JButton getBotaoClienteCancelar() {
         return botaoClienteCancelar;
     }

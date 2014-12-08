@@ -16,13 +16,13 @@ import view.*;
  * @author Professor
  */
 public class FormularioClienteController implements ActionListener {
-    
+
     private FormularioClienteView view = null;
-    
+
     public FormularioClienteView getView() {
         return this.view;
     }
-    
+
     public FormularioClienteController(FormularioClienteView view) {
         // Aponto para a View  deste Controller
         this.view = view;
@@ -30,7 +30,7 @@ public class FormularioClienteController implements ActionListener {
         this.view.getBotaoClienteSalvar().addActionListener(this);
         this.view.getBotaoClienteCancelar().addActionListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
@@ -38,7 +38,6 @@ public class FormularioClienteController implements ActionListener {
             //Chama a Tela de Gestão de Crianca
             Cliente model = new Cliente();
             ClienteDAO clienteDAO = new ClienteDAO();
-            model.setId(this.view.get)
             model.setNome(this.view.getCampoClienteNome().getText());
             if (this.view.getRbPessoaFisica().isSelected()) {
                 model.setPessoa(this.view.getRbPessoaFisica().getText());
@@ -49,9 +48,10 @@ public class FormularioClienteController implements ActionListener {
             model.setContato(this.view.getCampoClienteContato().getText());
             model.setLogin(this.view.getCampoClienteLogin().getText());
             model.setSenha(this.view.getCampoClienteSenha().getText());
-            if(this.view.getAcao() == "cadastrar"){
+            if (this.view.getAcao() == "cadastrar") {
                 clienteDAO.cadastrar(model);
-            }else if(this.view.getAcao() == "editar"){
+            } else if (this.view.getAcao() == "editar") {
+                model.setId(this.view.getIdCliente());
                 clienteDAO.alterar(model);
             }
             this.view.getCampoClienteNome().setText("");
@@ -66,7 +66,7 @@ public class FormularioClienteController implements ActionListener {
         } else if (e.getSource() == this.view.getBotaoClienteCancelar()) {
             System.exit(0);
         }
-        
+
     }
-    
+
 }
