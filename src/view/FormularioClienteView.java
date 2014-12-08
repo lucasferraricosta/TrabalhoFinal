@@ -4,6 +4,11 @@
  */
 package view;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -284,4 +289,51 @@ public class FormularioClienteView extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbPessoaFisica;
     private javax.swing.JRadioButton rbPessoaJuridica;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoClienteCancelar() {
+        return botaoClienteCancelar;
+    }
+
+    public JButton getBotaoClienteSalvar() {
+        return botaoClienteSalvar;
+    }
+
+    public JTextField getCampoClienteContato() {
+        return campoClienteContato;
+    }
+
+    public JTextField getCampoClienteCpfCnpj() {
+        return campoClienteCpfCnpj;
+    }
+
+    public JTextField getCampoClienteLogin() {
+        return campoClienteLogin;
+    }
+
+    public JTextField getCampoClienteNome() {
+        return campoClienteNome;
+    }
+
+    public JTextField getCampoClienteRepeteSenha() {
+        return campoClienteRepeteSenha;
+    }
+
+    public JTextField getCampoClienteSenha() {
+        return campoClienteSenha;
+    }
+
+    public ButtonGroup getCampoFuncionarioSexo() {
+        return campoFuncionarioSexo;
+    }
+
+    public JRadioButton getRbPessoaFisica() {
+        return rbPessoaFisica;
+    }
+
+    public JRadioButton getRbPessoaJuridica() {
+        return rbPessoaJuridica;
+    }
+
+    
+
 }

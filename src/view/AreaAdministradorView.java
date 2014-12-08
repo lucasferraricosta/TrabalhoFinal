@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author lucas.070395
@@ -36,7 +38,7 @@ public class AreaAdministradorView extends javax.swing.JFrame {
         setTitle("Área do Administrador");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));
-        setName("areaAdministrador");
+        setName("areaAdministrador"); // NOI18N
         setResizable(false);
 
         bAdminfuncionarios.setText("Manter Funcionários");
@@ -142,4 +144,23 @@ public class AreaAdministradorView extends javax.swing.JFrame {
     private javax.swing.JButton bAdmintrabalhos;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getbAdminclientes() {
+        return bAdminclientes;
+    }
+
+    public JButton getbAdminfuncionarios() {
+        return bAdminfuncionarios;
+    }
+
+    public JButton getbAdminsair() {
+        return bAdminsair;
+    }
+
+    public JButton getbAdmintrabalhos() {
+        return bAdmintrabalhos;
+    }
+
+    
+
 }

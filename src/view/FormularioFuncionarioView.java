@@ -4,6 +4,11 @@
  */
 package view;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -273,4 +278,51 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbSexoFeminino;
     private javax.swing.JRadioButton rbSexoMasculino;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoFuncionarioCancelar() {
+        return botaoFuncionarioCancelar;
+    }
+
+    public JButton getBotaoFuncionarioSalvar() {
+        return botaoFuncionarioSalvar;
+    }
+
+    public JTextField getCampoFuncionarioCpf() {
+        return campoFuncionarioCpf;
+    }
+
+    public JTextField getCampoFuncionarioIdade() {
+        return campoFuncionarioIdade;
+    }
+
+    public JTextField getCampoFuncionarioLogin() {
+        return campoFuncionarioLogin;
+    }
+
+    public JTextField getCampoFuncionarioNome() {
+        return campoFuncionarioNome;
+    }
+
+    public JTextField getCampoFuncionarioRepeteSenha() {
+        return campoFuncionarioRepeteSenha;
+    }
+
+    public JTextField getCampoFuncionarioSenha() {
+        return campoFuncionarioSenha;
+    }
+
+    public ButtonGroup getCampoFuncionarioSexo() {
+        return campoFuncionarioSexo;
+    }
+
+    public JRadioButton getRbSexoFeminino() {
+        return rbSexoFeminino;
+    }
+
+    public JRadioButton getRbSexoMasculino() {
+        return rbSexoMasculino;
+    }
+
+    
+
 }

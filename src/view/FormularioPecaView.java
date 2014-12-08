@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -167,4 +171,23 @@ public class FormularioPecaView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea textAreaPecaDescricao;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoPecaCancelar() {
+        return botaoPecaCancelar;
+    }
+
+    public JButton getBotaoPecaSalvar() {
+        return botaoPecaSalvar;
+    }
+
+    public JTextField getCampoPecaNome() {
+        return campoPecaNome;
+    }
+
+    public JTextArea getTextAreaPecaDescricao() {
+        return textAreaPecaDescricao;
+    }
+
+    
+
 }

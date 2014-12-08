@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author lucas.070395
@@ -165,4 +169,31 @@ public class ManterTrabalhosView extends javax.swing.JFrame {
     private javax.swing.JList listaTrabalhos;
     private javax.swing.JTextArea textAreaDadosTrabalho;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoTrabalhoCadastrar() {
+        return botaoTrabalhoCadastrar;
+    }
+
+    public JButton getBotaoTrabalhoEditar() {
+        return botaoTrabalhoEditar;
+    }
+
+    public JButton getBotaoTrabalhoExcluir() {
+        return botaoTrabalhoExcluir;
+    }
+
+    public JButton getBotaoTrabalhoVisualizar() {
+        return botaoTrabalhoVisualizar;
+    }
+
+    public JList getListaTrabalhos() {
+        return listaTrabalhos;
+    }
+
+    public JTextArea getTextAreaDadosTrabalho() {
+        return textAreaDadosTrabalho;
+    }
+
+    
+
 }

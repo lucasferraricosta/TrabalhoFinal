@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -38,7 +41,7 @@ public class FormLoginView extends javax.swing.JFrame {
         setTitle("Login");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));
-        setName("login");
+        setName("login"); // NOI18N
         setPreferredSize(new java.awt.Dimension(400, 400));
 
         jLabel1.setText("Login:");
@@ -169,4 +172,23 @@ public class FormLoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getbLoginlogin() {
+        return bLoginlogin;
+    }
+
+    public JButton getbLoginsair() {
+        return bLoginsair;
+    }
+
+    public JTextField getCampoLoginlogin() {
+        return campoLoginlogin;
+    }
+
+    public JTextField getCampoLoginsenha() {
+        return campoLoginsenha;
+    }
+
+    
+
 }

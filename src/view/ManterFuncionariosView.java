@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author lucas.070395
@@ -165,4 +169,31 @@ public class ManterFuncionariosView extends javax.swing.JFrame {
     private javax.swing.JList listaFuncionarios;
     private javax.swing.JTextArea textAreaDadosFuncionario;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoFuncionarioCadastrar() {
+        return botaoFuncionarioCadastrar;
+    }
+
+    public JButton getBotaoFuncionarioEditar() {
+        return botaoFuncionarioEditar;
+    }
+
+    public JButton getBotaoFuncionarioExcluir() {
+        return botaoFuncionarioExcluir;
+    }
+
+    public JButton getBotaoFuncionarioVisualizar() {
+        return botaoFuncionarioVisualizar;
+    }
+
+    public JList getListaFuncionarios() {
+        return listaFuncionarios;
+    }
+
+    public JTextArea getTextAreaDadosFuncionario() {
+        return textAreaDadosFuncionario;
+    }
+
+    
+
 }

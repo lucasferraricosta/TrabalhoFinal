@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -231,4 +235,35 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
     private javax.swing.JComboBox selectTrabalhoFuncionario;
     private javax.swing.JComboBox selectTrabalhoPeca;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoTrabalhoCancelar() {
+        return botaoTrabalhoCancelar;
+    }
+
+    public JButton getBotaoTrabalhoSalvar() {
+        return botaoTrabalhoSalvar;
+    }
+
+    public JTextField getCampoFuncionarioNome() {
+        return campoFuncionarioNome;
+    }
+
+    public JTextField getCampoTrabalhoDataEntrega() {
+        return campoTrabalhoDataEntrega;
+    }
+
+    public JComboBox getSelectTrabalhoCliente() {
+        return selectTrabalhoCliente;
+    }
+
+    public JComboBox getSelectTrabalhoFuncionario() {
+        return selectTrabalhoFuncionario;
+    }
+
+    public JComboBox getSelectTrabalhoPeca() {
+        return selectTrabalhoPeca;
+    }
+
+    
+
 }

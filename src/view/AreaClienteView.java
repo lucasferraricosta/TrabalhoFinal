@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author lucas.070395
@@ -167,4 +171,31 @@ public class AreaClienteView extends javax.swing.JFrame {
     private javax.swing.JList listaPecas;
     private javax.swing.JTextArea textAreaDadosPeca;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoPecaCadastrar() {
+        return botaoPecaCadastrar;
+    }
+
+    public JButton getBotaoPecaEditar() {
+        return botaoPecaEditar;
+    }
+
+    public JButton getBotaoPecaExcluir() {
+        return botaoPecaExcluir;
+    }
+
+    public JButton getBotaoPecaVisualizar() {
+        return botaoPecaVisualizar;
+    }
+
+    public JList getListaPecas() {
+        return listaPecas;
+    }
+
+    public JTextArea getTextAreaDadosPeca() {
+        return textAreaDadosPeca;
+    }
+
+    
+
 }

@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author lucas.070395
@@ -165,4 +169,31 @@ public class ManterClientesView extends javax.swing.JFrame {
     private javax.swing.JList listaClientes;
     private javax.swing.JTextArea textAreaDadosCliente;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoClienteCadastrar() {
+        return botaoClienteCadastrar;
+    }
+
+    public JButton getBotaoClienteEditar() {
+        return botaoClienteEditar;
+    }
+
+    public JButton getBotaoClienteExcluir() {
+        return botaoClienteExcluir;
+    }
+
+    public JButton getBotaoClienteVisualizar() {
+        return botaoClienteVisualizar;
+    }
+
+    public JList getListaClientes() {
+        return listaClientes;
+    }
+
+    public JTextArea getTextAreaDadosCliente() {
+        return textAreaDadosCliente;
+    }
+
+    
+
 }

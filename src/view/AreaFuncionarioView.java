@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lucas.070395
@@ -162,4 +166,23 @@ public class AreaFuncionarioView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaFuncionarioTrabalhos;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotaoFuncionarioHoras() {
+        return botaoFuncionarioHoras;
+    }
+
+    public JButton getBotaoFuncionarioSair() {
+        return botaoFuncionarioSair;
+    }
+
+    public JTextField getCampoFuncionarioHorasTrabalhadas() {
+        return campoFuncionarioHorasTrabalhadas;
+    }
+
+    public JTable getTabelaFuncionarioTrabalhos() {
+        return tabelaFuncionarioTrabalhos;
+    }
+
+    
+
 }

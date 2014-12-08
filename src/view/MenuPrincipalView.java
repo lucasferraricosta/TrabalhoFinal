@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author lucas.070395
@@ -177,4 +179,23 @@ public class MenuPrincipalView extends javax.swing.JFrame {
     private javax.swing.JButton bMPsair;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getbMPadmin() {
+        return bMPadmin;
+    }
+
+    public JButton getbMPclient() {
+        return bMPclient;
+    }
+
+    public JButton getbMPfunc1() {
+        return bMPfunc1;
+    }
+
+    public JButton getbMPsair() {
+        return bMPsair;
+    }
+
+    
+
 }
