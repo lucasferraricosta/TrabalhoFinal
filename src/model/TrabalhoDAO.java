@@ -140,8 +140,10 @@ public class TrabalhoDAO {
             pstmt.setInt(1, idtrabalho);
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
-
-            Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getString("nome"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
+            Trabalho trabalho = null;
+            while (rs.next()) {
+                trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getString("nome"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
+            }
             rs.close();
             pstmt.close();
 

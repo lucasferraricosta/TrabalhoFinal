@@ -137,8 +137,10 @@ public class PecaDAO {
             pstmt.setInt(1, idpeca);
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
-
-            Peca peca = new Peca(rs.getInt("idpeca"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("idcliente"));
+            Peca peca = null;
+            while (rs.next()) {
+                peca = new Peca(rs.getInt("idpeca"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("idcliente"));
+            }
             rs.close();
             pstmt.close();
 

@@ -146,8 +146,10 @@ public class ClienteDAO {
             pstmt.setInt(1, idcliente);
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
-
-            Cliente cliente = new Cliente(rs.getInt("idcliente"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
+            Cliente cliente = null;
+            while (rs.next()) {
+                cliente = new Cliente(rs.getInt("idcliente"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
+            }
             rs.close();
             pstmt.close();
 
