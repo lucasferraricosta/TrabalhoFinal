@@ -22,7 +22,7 @@ public class FuncionarioDAO {
     private Connection conn = null;
 
     public FuncionarioDAO() {
-        try{
+        try {
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -34,8 +34,6 @@ public class FuncionarioDAO {
         }//Fim try
     }
 
-    
-    
     public void cadastrar(Funcionario funcionario) {
         try {
 
@@ -119,7 +117,7 @@ public class FuncionarioDAO {
 
             while (rs.next()) {
 
-                // criando o objeto cliente
+                // criando o objeto funcionario
                 Funcionario funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
                 // adicionando o objeto à lista
                 listaFuncionarios.add(funcionario);
@@ -128,6 +126,32 @@ public class FuncionarioDAO {
             pstmt.close();
 
             return listaFuncionarios;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public Funcionario retornaDados(int idfuncionario) {
+        try {
+            PreparedStatement pstmt;
+            List<Funcionario> listaFuncionarios = new ArrayList<>();
+
+            String sql = "select * from funcionario WHERE idfuncionario = ?";
+
+            // Cria a PreparedStatement com o SQL
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1, idfuncionario);
+            //Executa a query de seleção
+            ResultSet rs = pstmt.executeQuery();
+
+            Funcionario funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+            rs.close();
+            pstmt.close();
+
+            return funcionario;
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

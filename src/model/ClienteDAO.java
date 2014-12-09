@@ -12,16 +12,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Lucas
  */
 public class ClienteDAO {
-    
+
     private Connection conn = null;
 
     public ClienteDAO() {
-        try{
+        try {
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -32,7 +33,7 @@ public class ClienteDAO {
             System.out.println(e);
         }//Fim try
     }
-    
+
     public void cadastrar(Cliente cliente) {
         try {
 
@@ -131,23 +132,22 @@ public class ClienteDAO {
             return null;
         }
     }
-    
-    public Cliente retornaDados(int idcliente){
+
+    public Cliente retornaDados(int idcliente) {
         try {
             PreparedStatement pstmt;
             List<Cliente> listaClientes = new ArrayList<>();
 
             String sql = "select * from cliente WHERE idcliente = ?";
-            
+
             // Cria a PreparedStatement com o SQL
             pstmt = conn.prepareStatement(sql);
-            
+
             pstmt.setInt(1, idcliente);
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
 
             Cliente cliente = new Cliente(rs.getInt("idcliente"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
-                // adicionando o objeto à lista
             rs.close();
             pstmt.close();
 
@@ -158,5 +158,5 @@ public class ClienteDAO {
             return null;
         }
     }
-    
+
 }

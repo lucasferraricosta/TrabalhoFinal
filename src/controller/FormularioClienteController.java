@@ -18,13 +18,13 @@ import view.*;
 public class FormularioClienteController implements ActionListener {
 
     private FormularioClienteView view = null;
-    private ManterClientesController pai = null;
+    private ManterClienteController pai = null;
     
     public FormularioClienteView getView() {
         return this.view;
     }
 
-    public FormularioClienteController(FormularioClienteView view, ManterClientesController pai) {
+    public FormularioClienteController(FormularioClienteView view, ManterClienteController pai) {
         // Aponto para a View  deste Controller
         this.view = view;
         this.pai = pai;
