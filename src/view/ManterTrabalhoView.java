@@ -10,12 +10,12 @@ import javax.swing.*;
  *
  * @author lucas.070395
  */
-public class ManterClienteView extends javax.swing.JFrame {
+public class ManterTrabalhoView extends javax.swing.JFrame {
 
     /**
      * Creates new form ManterFuncionariosView
      */
-    public ManterClienteView() {
+    public ManterTrabalhoView() {
         initComponents();
     }
 

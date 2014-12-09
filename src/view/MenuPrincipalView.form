@@ -85,33 +85,21 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc1;rea do Cliente"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMPclientActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bMPadmin">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc1;rea do Administrador"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMPadminActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bMPfunc1">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc1;rea do Funcion&#xe1;rio"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMPfunc1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bMPsair">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMPsairActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -37,36 +37,16 @@ public class MenuPrincipalView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
         setMinimumSize(new java.awt.Dimension(450, 400));
-        setName("menuPrincipal");
+        setName("menuPrincipal"); // NOI18N
         setResizable(false);
 
         bMPclient.setText("Área do Cliente");
-        bMPclient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMPclientActionPerformed(evt);
-            }
-        });
 
         bMPadmin.setText("Área do Administrador");
-        bMPadmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMPadminActionPerformed(evt);
-            }
-        });
 
         bMPfunc1.setText("Área do Funcionário");
-        bMPfunc1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMPfunc1ActionPerformed(evt);
-            }
-        });
 
         bMPsair.setText("Sair");
-        bMPsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMPsairActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,63 +95,6 @@ public class MenuPrincipalView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bMPclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMPclientActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bMPclientActionPerformed
-
-    private void bMPadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMPadminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bMPadminActionPerformed
-
-    private void bMPfunc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMPfunc1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bMPfunc1ActionPerformed
-
-    private void bMPsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMPsairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bMPsairActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the
-         * default look and feel. For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /*
-         * Create and display the form
-         */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new MenuPrincipalView().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bMPadmin;
     private javax.swing.JButton bMPclient;
