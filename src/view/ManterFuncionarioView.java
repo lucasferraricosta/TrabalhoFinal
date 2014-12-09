@@ -78,15 +78,7 @@ public class ManterFuncionarioView extends javax.swing.JFrame {
             new String [] {
                 "Id", "Nome"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane4.setViewportView(listaFuncionarios);
         if (listaFuncionarios.getColumnModel().getColumnCount() > 0) {
             listaFuncionarios.getColumnModel().getColumn(0).setResizable(false);

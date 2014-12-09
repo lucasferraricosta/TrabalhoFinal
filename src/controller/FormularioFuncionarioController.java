@@ -22,6 +22,23 @@ public class FormularioFuncionarioController implements ActionListener {
         //Definindo os listeners para os botoes dessa view.
         this.view.getBotaoFuncionarioSalvar().addActionListener(this);
         this.view.getBotaoFuncionarioCancelar().addActionListener(this);
+        Funcionario funcionario = new Funcionario();
+        if (this.view.getAcao() == "editar") {
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            funcionario = funcionarioDAO.retornaDados(this.view.getIdFuncionario());
+            this.view.getCampoFuncionarioNome().setText(funcionario.getNome());
+            if (funcionario.getSexo().equals("Masculino")) {
+                System.out.print("M");
+                this.view.getRbSexoMasculino().setSelected(true);
+            } else if (funcionario.getSexo().equals("Feminino")) {
+                System.out.print("F");
+                this.view.getRbSexoFeminino().setSelected(true);
+            }
+            this.view.getCampoFuncionarioCpf().setText(funcionario.getCpf());
+            this.view.getCampoFuncionarioIdade().setText(""+funcionario.getIdade());
+            this.view.getCampoFuncionarioLogin().setText(funcionario.getLogin());
+            this.view.getCampoFuncionarioSenha().setText(funcionario.getSenha());
+        }
     }
 
     @Override

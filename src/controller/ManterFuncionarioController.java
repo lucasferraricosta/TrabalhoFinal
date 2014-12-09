@@ -27,6 +27,10 @@ public class ManterFuncionarioController implements ActionListener {
         this.view.getBotaoFuncionarioEditar().addActionListener(this);
         this.view.getBotaoFuncionarioExcluir().addActionListener(this);
         this.view.getBotaoFuncionarioVoltar().addActionListener(this);
+        
+        
+        this.view.getListaFuncionarios().getColumnModel().getColumn(0).setPreferredWidth(20);
+        this.view.getListaFuncionarios().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
 
     @Override
@@ -67,10 +71,11 @@ public class ManterFuncionarioController implements ActionListener {
     }
 
     public void atualizaTabela() {
-        DefaultTableModel modeloTabela = new DefaultTableModel();
+        DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getListaFuncionarios().getModel();
         modeloTabela.setNumRows(0);
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         List<Funcionario> lista = funcionarioDAO.listar();
+//        modeloTabela.setNumRows(lista.size());
         for (Funcionario funcionario : lista) {
             modeloTabela.addRow(new Object[]{funcionario.getId(), funcionario.getNome()});
         }

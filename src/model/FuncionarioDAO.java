@@ -38,7 +38,7 @@ public class FuncionarioDAO {
         try {
 
             //Executa a query de inserção
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO funcionario (nome,idade, sexo, cpf, login, senha) VALUES (?,?,?,?,?,?)");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO funcionario (nome, idade, sexo, cpf, login, senha) VALUES (?,?,?,?,?,?)");
 
             pstmt.setString(1, funcionario.getNome());
             pstmt.setInt(2, funcionario.getIdade());
@@ -124,7 +124,6 @@ public class FuncionarioDAO {
             }
             rs.close();
             pstmt.close();
-
             return listaFuncionarios;
 
         } catch (SQLException e) {
@@ -146,8 +145,10 @@ public class FuncionarioDAO {
             pstmt.setInt(1, idfuncionario);
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
-
-            Funcionario funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+            Funcionario funcionario = null;
+            while (rs.next()) {
+                funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+            }
             rs.close();
             pstmt.close();
 

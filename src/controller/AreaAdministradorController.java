@@ -36,6 +36,7 @@ public class AreaAdministradorController implements ActionListener {
             ManterFuncionarioView tela = new ManterFuncionarioView();
             ManterFuncionarioController controle = new ManterFuncionarioController(tela);
             controle.getView().setVisible(true);
+            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbAdmintrabalhos()) {
         } else if (e.getSource() == this.view.getbAdminsair()) {
             this.getView().dispose();
