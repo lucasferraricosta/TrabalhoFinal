@@ -66,7 +66,7 @@ public class ManterTrabalhoController implements ActionListener {
     }
 
     public void atualizaTabela() {
-        DefaultTableModel modeloTabela = new DefaultTableModel();
+        DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getListaTrabalhos().getModel();
         modeloTabela.setNumRows(0);
         TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
         List<Trabalho> lista = trabalhoDAO.listar();

@@ -32,12 +32,20 @@ public class AreaAdministradorController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
         if (e.getSource() == this.view.getbAdminclientes()) {
+            ManterClienteView tela = new ManterClienteView();
+            ManterClienteController controle = new ManterClienteController(tela);
+            controle.getView().setVisible(true);
+            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbAdminfuncionarios()) {
             ManterFuncionarioView tela = new ManterFuncionarioView();
             ManterFuncionarioController controle = new ManterFuncionarioController(tela);
             controle.getView().setVisible(true);
             controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbAdmintrabalhos()) {
+            ManterTrabalhoView tela = new ManterTrabalhoView();
+            ManterTrabalhoController controle = new ManterTrabalhoController(tela);
+            controle.getView().setVisible(true);
+            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbAdminsair()) {
             this.getView().dispose();
         }

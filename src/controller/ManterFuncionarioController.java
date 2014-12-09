@@ -75,7 +75,6 @@ public class ManterFuncionarioController implements ActionListener {
         modeloTabela.setNumRows(0);
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         List<Funcionario> lista = funcionarioDAO.listar();
-//        modeloTabela.setNumRows(lista.size());
         for (Funcionario funcionario : lista) {
             modeloTabela.addRow(new Object[]{funcionario.getId(), funcionario.getNome()});
         }

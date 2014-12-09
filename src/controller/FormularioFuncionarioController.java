@@ -71,7 +71,6 @@ public class FormularioFuncionarioController implements ActionListener {
             this.view.getCampoFuncionarioIdade().setText("");
             this.view.getCampoFuncionarioLogin().setText("");
             this.view.getCampoFuncionarioSenha().setText("");
-            this.view.getCampoFuncionarioRepeteSenha().setText("");
             this.view.dispose();
             pai.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoFuncionarioCancelar()) {

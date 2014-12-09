@@ -67,7 +67,7 @@ public class ManterClienteController implements ActionListener {
     }
 
     public void atualizaTabela() {
-        DefaultTableModel modeloTabela = new DefaultTableModel();
+        DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getListaClientes().getModel();
         modeloTabela.setNumRows(0);
         ClienteDAO clienteDAO = new ClienteDAO();
         List<Cliente> lista = clienteDAO.listar();
