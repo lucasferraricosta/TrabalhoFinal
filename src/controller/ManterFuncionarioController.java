@@ -61,7 +61,7 @@ public class ManterFuncionarioController implements ActionListener {
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoFuncionarioVoltar()) {
             this.view.getTextAreaDadosFuncionario().setText("");
-            System.exit(0);
+            this.view.dispose();
         }
 
     }

@@ -55,10 +55,10 @@ public class FormularioFuncionarioController implements ActionListener {
             this.view.getCampoFuncionarioLogin().setText("");
             this.view.getCampoFuncionarioSenha().setText("");
             this.view.getCampoFuncionarioRepeteSenha().setText("");
-            System.exit(0);
+            this.view.dispose();
             pai.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoFuncionarioCancelar()) {
-            System.exit(0);
+            this.view.dispose();
         }
 
     }

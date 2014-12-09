@@ -60,7 +60,7 @@ public class ManterTrabalhoController implements ActionListener {
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoTrabalhoVoltar()) {
             this.view.getTextAreaDadosTrabalho().setText("");
-            System.exit(0);
+            this.view.dispose();
         }
 
     }

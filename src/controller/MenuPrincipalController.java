@@ -38,7 +38,7 @@ public class MenuPrincipalController implements ActionListener {
         } else if (e.getSource() == this.view.getbMPclient()) {
         } else if (e.getSource() == this.view.getbMPfunc1()) {
         } else if (e.getSource() == this.view.getbMPsair()) {
-            this.getView().dispose();
+            System.exit(0);
         }
 
     }

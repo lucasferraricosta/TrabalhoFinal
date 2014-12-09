@@ -55,10 +55,10 @@ public class FormularioClienteController implements ActionListener {
             this.view.getCampoClienteLogin().setText("");
             this.view.getCampoClienteSenha().setText("");
             this.view.getCampoClienteRepeteSenha().setText("");
-            System.exit(0);
+            this.view.dispose();
             pai.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoClienteCancelar()) {
-            System.exit(0);
+            this.view.dispose();
         }
 
     }

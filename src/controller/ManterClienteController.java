@@ -61,7 +61,7 @@ public class ManterClienteController implements ActionListener {
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoClienteVoltar()) {
             this.view.getTextAreaDadosCliente().setText("");
-            System.exit(0);
+            this.view.dispose();
         }
 
     }
