@@ -38,11 +38,12 @@ public class TrabalhoDAO {
         try {
 
             //Executa a query de inserção
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO trabalho (idpeca, idfuncionario, data_entrega) VALUES (?,?,?)");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO trabalho (nome, idpeca, idfuncionario, data_entrega) VALUES (?, ?,?,?)");
 
-            pstmt.setInt(1, trabalho.getIdPeca());
-            pstmt.setInt(2, trabalho.getIdFuncionario());
-            pstmt.setString(3, trabalho.getDataEntrega());
+            pstmt.setString(1, trabalho.getNome());
+            pstmt.setInt(2, trabalho.getIdPeca());
+            pstmt.setInt(3, trabalho.getIdFuncionario());
+            pstmt.setString(4, trabalho.getDataEntrega());
 
             pstmt.execute();
 
@@ -57,16 +58,16 @@ public class TrabalhoDAO {
 
             //Executa a query de alteração
             PreparedStatement pstmt = conn.prepareStatement("UPDATE trabalho SET "
+                    + "nome = ? ,"
                     + "idpeca = ? ,"
                     + "idfuncionario = ?,"
                     + "data_entrega = ? ,"
-                    + "horas_trabalhadas = ? ,"
                     + "WHERE idtrabalho = ? ");
 
-            pstmt.setInt(1, trabalho.getIdPeca());
-            pstmt.setInt(2, trabalho.getIdFuncionario());
-            pstmt.setString(3, trabalho.getDataEntrega());
-            pstmt.setInt(4, trabalho.getHorasTrabalhadas());
+            pstmt.setString(1, trabalho.getNome());
+            pstmt.setInt(2, trabalho.getIdPeca());
+            pstmt.setInt(3, trabalho.getIdFuncionario());
+            pstmt.setString(4, trabalho.getDataEntrega());
             pstmt.setInt(5, trabalho.getId());
 
             pstmt.execute();
@@ -111,7 +112,7 @@ public class TrabalhoDAO {
             while (rs.next()) {
 
                 // criando o objeto cliente
-                Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
+                Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getString("nome"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
                 // adicionando o objeto à lista
                 listaTrabalhos.add(trabalho);
             }
@@ -140,7 +141,7 @@ public class TrabalhoDAO {
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
 
-            Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
+            Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getString("nome"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
             rs.close();
             pstmt.close();
 

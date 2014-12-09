@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -11,10 +6,6 @@ import javax.swing.JOptionPane;
 import model.*;
 import view.*;
 
-/**
- *
- * @author Professor
- */
 public class FormularioTrabalhoController implements ActionListener {
 
     private FormularioTrabalhoView view = null;
@@ -41,15 +32,7 @@ public class FormularioTrabalhoController implements ActionListener {
             Trabalho model = new Trabalho();
             TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
             model.setNome(this.view.getCampoTrabalhoNome().getText());
-            if (this.view.getRbSexoMasculino().isSelected()) {
-                model.setSexo(this.view.getRbSexoMasculino().getText());
-            } else if (this.view.getRbSexoFeminino().isSelected()) {
-                model.setSexo(this.view.getRbSexoFeminino().getText());
-            }
-            model.setCpf(this.view.getCampoTrabalhoCpf().getText());
-            model.setIdade(Integer.parseInt(this.view.getCampoTrabalhoIdade().getText()));
-            model.setLogin(this.view.getCampoTrabalhoLogin().getText());
-            model.setSenha(this.view.getCampoTrabalhoSenha().getText());
+            model.setDataEntrega(this.view.getCampoTrabalhoDataEntrega().getText());
             if (this.view.getAcao() == "cadastrar") {
                 trabalhoDAO.cadastrar(model);
             } else if (this.view.getAcao() == "editar") {
@@ -57,13 +40,7 @@ public class FormularioTrabalhoController implements ActionListener {
                 trabalhoDAO.alterar(model);
             }
             this.view.getCampoTrabalhoNome().setText("");
-            this.view.getRbSexoMasculino().setSelected(false);
-            this.view.getRbSexoFeminino().setSelected(false);
-            this.view.getCampoTrabalhoCpf().setText("");
-            this.view.getCampoTrabalhoIdade().setText("");
-            this.view.getCampoTrabalhoLogin().setText("");
-            this.view.getCampoTrabalhoSenha().setText("");
-            this.view.getCampoTrabalhoRepeteSenha().setText("");
+            this.view.getCampoTrabalhoDataEntrega().setText("");
             System.exit(0);
             pai.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoTrabalhoCancelar()) {

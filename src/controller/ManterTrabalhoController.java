@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -15,10 +10,6 @@ import javax.swing.table.TableModel;
 import model.*;
 import view.*;
 
-/**
- *
- * @author Professor
- */
 public class ManterTrabalhoController implements ActionListener {
 
     private ManterTrabalhoView view = null;
@@ -50,12 +41,11 @@ public class ManterTrabalhoController implements ActionListener {
             int idTrabalho = Integer.parseInt(this.view.getListaTrabalhos().getValueAt(this.view.getListaTrabalhos().getSelectedRow(), 0).toString());
             Trabalho trabalho = trabalhoDAO.retornaDados(idTrabalho);
             String texto = "Id: " + trabalho.getId() + "\n";
-            texto += "Peca: " + trabalho.getNome() + "\n";
-            texto += "Sexo: " + trabalho.getSexo() + "\n";
-            texto += "CPF: " + trabalho.getCpf() + "\n";
-            texto += "Idade: " + trabalho.getIdade()+ "\n";
-            texto += "Login: " + trabalho.getLogin() + "\n";
-            texto += "Senha: " + trabalho.getSenha();
+            texto += "Nome: " + trabalho.getNome() + "\n";
+            texto += "Peca: " + trabalho.getIdPeca() + "\n";
+            texto += "Funcionario: " + trabalho.getIdFuncionario()+ "\n";
+            texto += "Data Entrega: " + trabalho.getDataEntrega()+ "\n";
+            texto += "Horas Trabalhadas: " + trabalho.getHorasTrabalhadas();
             this.view.getTextAreaDadosTrabalho().setText(texto);
         } else if (e.getSource() == this.view.getBotaoTrabalhoEditar()) {
             FormularioTrabalhoView tela = new FormularioTrabalhoView("editar", Integer.parseInt(this.view.getListaTrabalhos().getValueAt(this.view.getListaTrabalhos().getSelectedRow(), 0).toString()));

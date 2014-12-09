@@ -12,6 +12,7 @@ package model;
 public class Trabalho {
 
     private int id;
+    private String nome;
     private int idPeca;
     private int idFuncionario;
     private String dataEntrega;
@@ -23,6 +24,14 @@ public class Trabalho {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getIdPeca() {
@@ -57,8 +66,9 @@ public class Trabalho {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
-    public Trabalho(int id, int idPeca, int idFuncionario, String dataEntrega, int horasTrabalhadas) {
+    public Trabalho(int id, String nome, int idPeca, int idFuncionario, String dataEntrega, int horasTrabalhadas) {
         this.id = id;
+        this.nome = nome;
         this.idPeca = idPeca;
         this.idFuncionario = idFuncionario;
         this.dataEntrega = dataEntrega;

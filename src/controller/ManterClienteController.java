@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -15,10 +10,6 @@ import javax.swing.table.TableModel;
 import model.*;
 import view.*;
 
-/**
- *
- * @author Professor
- */
 public class ManterClienteController implements ActionListener {
 
     private ManterClienteView view = null;

@@ -42,7 +42,7 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        campoFuncionarioNome = new javax.swing.JTextField();
+        campoTrabalhoNome = new javax.swing.JTextField();
         campoTrabalhoDataEntrega = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         selectTrabalhoPeca = new javax.swing.JComboBox();
@@ -81,7 +81,7 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addComponent(jLabel1)
                         .addGap(19, 19, 19)
-                        .addComponent(campoFuncionarioNome, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campoTrabalhoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,15 +91,12 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3)))
                             .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(campoTrabalhoDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(selectTrabalhoPeca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(selectTrabalhoFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addComponent(campoTrabalhoDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(selectTrabalhoPeca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(selectTrabalhoFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -108,7 +105,7 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(campoFuncionarioNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoTrabalhoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -174,9 +171,9 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoTrabalhoCancelar;
     private javax.swing.JButton botaoTrabalhoSalvar;
-    private javax.swing.JTextField campoFuncionarioNome;
     private javax.swing.ButtonGroup campoFuncionarioSexo;
     private javax.swing.JTextField campoTrabalhoDataEntrega;
+    private javax.swing.JTextField campoTrabalhoNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -214,8 +211,8 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
         return botaoTrabalhoSalvar;
     }
 
-    public JTextField getCampoFuncionarioNome() {
-        return campoFuncionarioNome;
+    public JTextField getCampoTrabalhoNome() {
+        return campoTrabalhoNome;
     }
 
     public JTextField getCampoTrabalhoDataEntrega() {
