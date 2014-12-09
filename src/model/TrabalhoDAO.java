@@ -126,4 +126,31 @@ public class TrabalhoDAO {
         }
     }
 
+    public Trabalho retornaDados(int idtrabalho) {
+        try {
+            PreparedStatement pstmt;
+            List<Trabalho> listaTrabalhos = new ArrayList<>();
+
+            String sql = "select * from trabalho WHERE idtrabalho = ?";
+
+            // Cria a PreparedStatement com o SQL
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1, idtrabalho);
+            //Executa a query de seleção
+            ResultSet rs = pstmt.executeQuery();
+
+            Trabalho trabalho = new Trabalho(rs.getInt("idtrabalho"), rs.getInt("idpeca"), rs.getInt("idfuncionario"), rs.getString("data_entrega"), rs.getInt("horas_trabalhadas"));
+            rs.close();
+            pstmt.close();
+
+            return trabalho;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+    }
+
 }

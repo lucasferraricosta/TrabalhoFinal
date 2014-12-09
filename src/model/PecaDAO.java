@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Lucas
@@ -21,7 +22,7 @@ public class PecaDAO {
     private Connection conn = null;
 
     public PecaDAO() {
-        try{
+        try {
             //Registra JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -32,7 +33,7 @@ public class PecaDAO {
             System.out.println(e);
         }//Fim try
     }
-    
+
     public void cadastrar(Peca peca) {
         try {
 
@@ -122,5 +123,32 @@ public class PecaDAO {
             return null;
         }
     }
-    
+
+    public Peca retornaDados(int idpeca) {
+        try {
+            PreparedStatement pstmt;
+            List<Peca> listaPecas = new ArrayList<>();
+
+            String sql = "select * from peca WHERE idpeca = ?";
+
+            // Cria a PreparedStatement com o SQL
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1, idpeca);
+            //Executa a query de seleção
+            ResultSet rs = pstmt.executeQuery();
+
+            Peca peca = new Peca(rs.getInt("idpeca"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("idcliente"));
+            rs.close();
+            pstmt.close();
+
+            return peca;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+    }
+
 }
