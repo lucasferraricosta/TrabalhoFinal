@@ -21,13 +21,13 @@ import view.*;
  */
 public class ManterClientesController implements ActionListener {
 
-    private ManterClientesView view = null;
+    private ManterClienteView view = null;
 
-    public ManterClientesView getView() {
+    public ManterClienteView getView() {
         return this.view;
     }
 
-    public ManterClientesController(ManterClientesView view) {
+    public ManterClientesController(ManterClienteView view) {
         // Aponto para a View  deste Controller
         this.view = view;
         //Definindo os listeners para os botoes dessa view.
