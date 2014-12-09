@@ -79,16 +79,16 @@
                   <Component id="jScrollPane4" min="-2" pref="309" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="botaoClienteCadastrar" pref="108" max="32767" attributes="0"/>
-                      <Component id="botaoClienteVisualizar" max="32767" attributes="0"/>
-                      <Component id="botaoClienteEditar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="botaoClienteExcluir" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoTrabalhoCadastrar" pref="108" max="32767" attributes="0"/>
+                      <Component id="botaoTrabalhoVisualizar" max="32767" attributes="0"/>
+                      <Component id="botaoTrabalhoEditar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoTrabalhoExcluir" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="botaoClienteVoltar" min="-2" pref="72" max="-2" attributes="0"/>
+                  <Component id="botaoTrabalhoVoltar" min="-2" pref="72" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,42 +97,42 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="botaoClienteCadastrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoTrabalhoCadastrar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoClienteVisualizar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoTrabalhoVisualizar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="botaoClienteEditar" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoTrabalhoEditar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoClienteExcluir" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoTrabalhoExcluir" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="201" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="botaoClienteVoltar" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoTrabalhoVoltar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="botaoClienteCadastrar">
+        <Component class="javax.swing.JButton" name="botaoTrabalhoCadastrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoClienteVisualizar">
+        <Component class="javax.swing.JButton" name="botaoTrabalhoVisualizar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Visualizar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoClienteEditar">
+        <Component class="javax.swing.JButton" name="botaoTrabalhoEditar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoClienteExcluir">
+        <Component class="javax.swing.JButton" name="botaoTrabalhoExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
@@ -144,7 +144,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="textAreaDadosCliente">
+            <Component class="javax.swing.JTextArea" name="textAreaDadosTrabalho">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -159,7 +159,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="listaClientes">
+            <Component class="javax.swing.JTable" name="listaTrabalhos">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="2" rowCount="0">
@@ -188,7 +188,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="botaoClienteVoltar">
+        <Component class="javax.swing.JButton" name="botaoTrabalhoVoltar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>

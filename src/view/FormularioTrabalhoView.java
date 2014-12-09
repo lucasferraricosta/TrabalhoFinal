@@ -17,8 +17,15 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
     /**
      * Creates new form FormularioFuncionarioView
      */
-    public FormularioTrabalhoView() {
+    public FormularioTrabalhoView(String acao) {
         initComponents();
+        this.setAcao(acao);
+    }
+    
+    public FormularioTrabalhoView(String acao, int idTrabalho) {
+        initComponents();
+        this.setAcao(acao);
+        this.setIdTrabalho(idTrabalho);
     }
 
     /**
@@ -180,6 +187,25 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
     private javax.swing.JComboBox selectTrabalhoPeca;
     // End of variables declaration//GEN-END:variables
 
+    private String acao;
+    private int idTrabalho;
+
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
+
+    public int getIdTrabalho() {
+        return idTrabalho;
+    }
+
+    public void setIdTrabalho(int idTrabalho) {
+        this.idTrabalho = idTrabalho;
+    }
+    
     public JButton getBotaoTrabalhoCancelar() {
         return botaoTrabalhoCancelar;
     }

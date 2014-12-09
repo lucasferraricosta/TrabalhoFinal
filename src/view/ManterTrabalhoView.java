@@ -31,15 +31,15 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        botaoClienteCadastrar = new javax.swing.JButton();
-        botaoClienteVisualizar = new javax.swing.JButton();
-        botaoClienteEditar = new javax.swing.JButton();
-        botaoClienteExcluir = new javax.swing.JButton();
+        botaoTrabalhoCadastrar = new javax.swing.JButton();
+        botaoTrabalhoVisualizar = new javax.swing.JButton();
+        botaoTrabalhoEditar = new javax.swing.JButton();
+        botaoTrabalhoExcluir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        textAreaDadosCliente = new javax.swing.JTextArea();
+        textAreaDadosTrabalho = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        listaClientes = new javax.swing.JTable();
-        botaoClienteVoltar = new javax.swing.JButton();
+        listaTrabalhos = new javax.swing.JTable();
+        botaoTrabalhoVoltar = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -59,19 +59,19 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(450, 400));
         setResizable(false);
 
-        botaoClienteCadastrar.setText("Cadastrar");
+        botaoTrabalhoCadastrar.setText("Cadastrar");
 
-        botaoClienteVisualizar.setText("Visualizar");
+        botaoTrabalhoVisualizar.setText("Visualizar");
 
-        botaoClienteEditar.setText("Editar");
+        botaoTrabalhoEditar.setText("Editar");
 
-        botaoClienteExcluir.setText("Excluir");
+        botaoTrabalhoExcluir.setText("Excluir");
 
-        textAreaDadosCliente.setColumns(20);
-        textAreaDadosCliente.setRows(5);
-        jScrollPane3.setViewportView(textAreaDadosCliente);
+        textAreaDadosTrabalho.setColumns(20);
+        textAreaDadosTrabalho.setRows(5);
+        jScrollPane3.setViewportView(textAreaDadosTrabalho);
 
-        listaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        listaTrabalhos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -87,13 +87,13 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(listaClientes);
-        if (listaClientes.getColumnModel().getColumnCount() > 0) {
-            listaClientes.getColumnModel().getColumn(0).setResizable(false);
-            listaClientes.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane4.setViewportView(listaTrabalhos);
+        if (listaTrabalhos.getColumnModel().getColumnCount() > 0) {
+            listaTrabalhos.getColumnModel().getColumn(0).setResizable(false);
+            listaTrabalhos.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        botaoClienteVoltar.setText("Voltar");
+        botaoTrabalhoVoltar.setText("Voltar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,32 +104,32 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoClienteCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(botaoClienteVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoClienteEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoClienteExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(botaoTrabalhoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addComponent(botaoTrabalhoVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoTrabalhoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoTrabalhoExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addComponent(jScrollPane3)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(botaoClienteVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(botaoTrabalhoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(botaoClienteCadastrar)
+                        .addComponent(botaoTrabalhoCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoClienteVisualizar)
+                        .addComponent(botaoTrabalhoVisualizar)
                         .addGap(8, 8, 8)
-                        .addComponent(botaoClienteEditar)
+                        .addComponent(botaoTrabalhoEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoClienteExcluir))
+                        .addComponent(botaoTrabalhoExcluir))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoClienteVoltar)
+                .addComponent(botaoTrabalhoVoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -154,46 +154,46 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoClienteCadastrar;
-    private javax.swing.JButton botaoClienteEditar;
-    private javax.swing.JButton botaoClienteExcluir;
-    private javax.swing.JButton botaoClienteVisualizar;
-    private javax.swing.JButton botaoClienteVoltar;
+    private javax.swing.JButton botaoTrabalhoCadastrar;
+    private javax.swing.JButton botaoTrabalhoEditar;
+    private javax.swing.JButton botaoTrabalhoExcluir;
+    private javax.swing.JButton botaoTrabalhoVisualizar;
+    private javax.swing.JButton botaoTrabalhoVoltar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable listaClientes;
-    private javax.swing.JTextArea textAreaDadosCliente;
+    private javax.swing.JTable listaTrabalhos;
+    private javax.swing.JTextArea textAreaDadosTrabalho;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotaoClienteCadastrar() {
-        return botaoClienteCadastrar;
+    public JButton getBotaoTrabalhoCadastrar() {
+        return botaoTrabalhoCadastrar;
     }
 
-    public JButton getBotaoClienteEditar() {
-        return botaoClienteEditar;
+    public JButton getBotaoTrabalhoEditar() {
+        return botaoTrabalhoEditar;
     }
 
-    public JButton getBotaoClienteExcluir() {
-        return botaoClienteExcluir;
+    public JButton getBotaoTrabalhoExcluir() {
+        return botaoTrabalhoExcluir;
     }
 
-    public JButton getBotaoClienteVisualizar() {
-        return botaoClienteVisualizar;
+    public JButton getBotaoTrabalhoVisualizar() {
+        return botaoTrabalhoVisualizar;
     }
 
-    public JButton getBotaoClienteVoltar() {
-        return botaoClienteVoltar;
+    public JButton getBotaoTrabalhoVoltar() {
+        return botaoTrabalhoVoltar;
     }
 
-    public JTable getListaClientes() {
-        return listaClientes;
+    public JTable getListaTrabalhos() {
+        return listaTrabalhos;
     }
 
-    public JTextArea getTextAreaDadosCliente() {
-        return textAreaDadosCliente;
+    public JTextArea getTextAreaDadosTrabalho() {
+        return textAreaDadosTrabalho;
     }
 
     
