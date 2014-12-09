@@ -2,7 +2,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import model.*;
 import view.*;
@@ -23,13 +26,43 @@ public class FormularioTrabalhoController implements ActionListener {
         //Definindo os listeners para os botoes dessa view.
         this.view.getBotaoTrabalhoSalvar().addActionListener(this);
         this.view.getBotaoTrabalhoCancelar().addActionListener(this);
-
+        Trabalho trabalho = new Trabalho();
         if (this.view.getAcao() == "editar") {
             TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
-            Trabalho trabalho = trabalhoDAO.retornaDados(this.view.getIdTrabalho());
+            trabalho = trabalhoDAO.retornaDados(this.view.getIdTrabalho());
             this.view.getCampoTrabalhoNome().setText(trabalho.getNome());
             this.view.getCampoTrabalhoDataEntrega().setText(trabalho.getDataEntrega());
-
+        }
+        
+        int indiceSelecionadoPeca = -1;
+        int indiceSelecionadoFuncionario = -1;
+        
+        DefaultComboBoxModel selectFuncionario = new DefaultComboBoxModel();
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        List<Funcionario> listaFuncionarios = funcionarioDAO.listar();
+        for(int i = 0;i<listaFuncionarios.size();i++){
+            selectFuncionario.addElement(listaFuncionarios.get(i).getId()+" - "+listaFuncionarios.get(i).getNome());
+            if(listaFuncionarios.get(i).getId() == trabalho.getIdFuncionario()){
+                indiceSelecionadoFuncionario = i;
+            }
+        }
+        this.view.getSelectTrabalhoFuncionario().setModel(selectFuncionario);
+        
+        DefaultComboBoxModel selectPeca = new DefaultComboBoxModel();
+        PecaDAO pecaDAO = new PecaDAO();
+        List<Peca> listaPecas = pecaDAO.listar();
+        for(int i = 0;i<listaPecas.size();i++){
+            selectFuncionario.addElement(listaPecas.get(i).getId()+" - "+listaPecas.get(i).getNome());
+            if(listaPecas.get(i).getId() == trabalho.getIdPeca()){
+                indiceSelecionadoPeca = i;
+            }
+        }
+        this.view.getSelectTrabalhoPeca().setModel(selectPeca);
+                
+        
+        if (this.view.getAcao() == "editar") {
+            this.view.getSelectTrabalhoFuncionario().getModel().setSelectedItem(this.view.getSelectTrabalhoFuncionario().getModel().getElementAt(indiceSelecionadoFuncionario));
+            this.view.getSelectTrabalhoPeca().getModel().setSelectedItem(this.view.getSelectTrabalhoPeca().getModel().getElementAt(indiceSelecionadoPeca));
         }
 
     }
