@@ -65,11 +65,7 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
 
         jLabel3.setText("Peça:");
 
-        selectTrabalhoPeca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel4.setText("Funcionário:");
-
-        selectTrabalhoFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
