@@ -18,14 +18,16 @@ import view.*;
 public class FormularioClienteController implements ActionListener {
 
     private FormularioClienteView view = null;
-
+    private ManterClientesController pai = null;
+    
     public FormularioClienteView getView() {
         return this.view;
     }
 
-    public FormularioClienteController(FormularioClienteView view) {
+    public FormularioClienteController(FormularioClienteView view, ManterClientesController pai) {
         // Aponto para a View  deste Controller
         this.view = view;
+        this.pai = pai;
         //Definindo os listeners para os botoes dessa view.
         this.view.getBotaoClienteSalvar().addActionListener(this);
         this.view.getBotaoClienteCancelar().addActionListener(this);
@@ -63,6 +65,7 @@ public class FormularioClienteController implements ActionListener {
             this.view.getCampoClienteSenha().setText("");
             this.view.getCampoClienteRepeteSenha().setText("");
             System.exit(0);
+            pai.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoClienteCancelar()) {
             System.exit(0);
         }
