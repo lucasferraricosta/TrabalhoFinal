@@ -28,16 +28,17 @@ public class FormLoginController implements ActionListener {
         this.view = view;
         this.area = area;
         //Definindo os listeners para os botoes dessa view.
-        this.view.getCampoLoginlogin().addActionListener(this);
+        this.view.getbLoginlogin().addActionListener(this);
         this.view.getbLoginsair().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
-        if (e.getSource() == this.view.getCampoLoginlogin()) {
+        if (e.getSource() == this.view.getbLoginlogin()) {
             if (this.area.equals("admin")) {
-                if (this.view.getCampoLoginlogin().equals("admin") && this.view.getCampoLoginsenha().equals("admin")) {
+                
+                if (this.view.getCampoLoginlogin().getText().equals("admin") && this.view.getCampoLoginsenha().getText().equals("admin")) {
                     AreaAdministradorView tela = new AreaAdministradorView();
                     AreaAdministradorController controle = new AreaAdministradorController(tela);
                     JOptionPane.showMessageDialog(this.getView(), "Login efetuado com sucesso.");
