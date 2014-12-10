@@ -30,11 +30,6 @@ public class FormLoginController implements ActionListener {
         //Definindo os listeners para os botoes dessa view.
         this.view.getCampoLoginlogin().addActionListener(this);
         this.view.getbLoginsair().addActionListener(this);
-
-        this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(0).setPreferredWidth(30);
-        this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(1).setPreferredWidth(30);
-        this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(2).setPreferredWidth(30);
-        this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(3).setPreferredWidth(30);
     }
 
     @Override
