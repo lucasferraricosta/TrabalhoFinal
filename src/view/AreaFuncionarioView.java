@@ -19,6 +19,7 @@ public class AreaFuncionarioView extends javax.swing.JFrame {
      */
     public AreaFuncionarioView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

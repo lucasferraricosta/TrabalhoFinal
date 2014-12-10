@@ -20,11 +20,13 @@ public class FormularioClienteView extends javax.swing.JFrame {
      */
     public FormularioClienteView(String acao) {
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
     }
     
     public FormularioClienteView(String acao, int idCliente){
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
         this.setIdCliente(idCliente);
     }

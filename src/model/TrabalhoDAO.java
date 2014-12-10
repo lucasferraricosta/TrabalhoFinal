@@ -61,7 +61,7 @@ public class TrabalhoDAO {
                     + "nome = ? ,"
                     + "idpeca = ? ,"
                     + "idfuncionario = ?,"
-                    + "data_entrega = ? ,"
+                    + "data_entrega = ? "
                     + "WHERE idtrabalho = ? ");
 
             pstmt.setString(1, trabalho.getNome());

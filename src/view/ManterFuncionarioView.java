@@ -17,6 +17,7 @@ public class ManterFuncionarioView extends javax.swing.JFrame {
      */
     public ManterFuncionarioView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

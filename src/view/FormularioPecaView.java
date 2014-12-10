@@ -19,11 +19,13 @@ public class FormularioPecaView extends javax.swing.JFrame {
      */
     public FormularioPecaView(String acao) {
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
     }
     
     public FormularioPecaView(String acao, int idPeca) {
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
         this.setIdPeca(idPeca);
     }

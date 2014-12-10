@@ -17,6 +17,7 @@ public class ManterClienteView extends javax.swing.JFrame {
      */
     public ManterClienteView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

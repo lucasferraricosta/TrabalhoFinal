@@ -20,11 +20,13 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
      */
     public FormularioFuncionarioView(String acao) {
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
     }
     
     public FormularioFuncionarioView(String acao, int idFuncionario){
         initComponents();
+        setLocationRelativeTo( null );
         this.setAcao(acao);
         this.setIdFuncionario(idFuncionario);
     }

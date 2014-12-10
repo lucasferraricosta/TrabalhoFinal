@@ -17,6 +17,7 @@ public class AreaAdministradorView extends javax.swing.JFrame {
      */
     public AreaAdministradorView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

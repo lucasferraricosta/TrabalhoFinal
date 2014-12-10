@@ -17,6 +17,7 @@ public class MenuPrincipalView extends javax.swing.JFrame {
      */
     public MenuPrincipalView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

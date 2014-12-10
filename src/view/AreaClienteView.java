@@ -17,6 +17,7 @@ public class AreaClienteView extends javax.swing.JFrame {
      */
     public AreaClienteView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

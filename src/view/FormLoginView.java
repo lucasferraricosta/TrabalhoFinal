@@ -18,6 +18,7 @@ public class FormLoginView extends javax.swing.JFrame {
      */
     public FormLoginView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**

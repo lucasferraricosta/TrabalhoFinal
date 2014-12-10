@@ -17,6 +17,7 @@ public class ManterTrabalhoView extends javax.swing.JFrame {
      */
     public ManterTrabalhoView() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**
