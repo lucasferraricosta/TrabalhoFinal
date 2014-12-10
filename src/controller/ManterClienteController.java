@@ -27,6 +27,10 @@ public class ManterClienteController implements ActionListener {
         this.view.getBotaoClienteEditar().addActionListener(this);
         this.view.getBotaoClienteExcluir().addActionListener(this);
         this.view.getBotaoClienteVoltar().addActionListener(this);
+        
+        
+        this.view.getListaClientes().getColumnModel().getColumn(0).setPreferredWidth(20);
+        this.view.getListaClientes().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
 
     @Override

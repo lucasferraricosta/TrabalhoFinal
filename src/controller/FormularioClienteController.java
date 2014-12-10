@@ -22,6 +22,21 @@ public class FormularioClienteController implements ActionListener {
         //Definindo os listeners para os botoes dessa view.
         this.view.getBotaoClienteSalvar().addActionListener(this);
         this.view.getBotaoClienteCancelar().addActionListener(this);
+        Cliente cliente = new Cliente();
+        if (this.view.getAcao() == "editar") {
+            ClienteDAO clienteDAO = new ClienteDAO();
+            cliente = clienteDAO.retornaDados(this.view.getIdCliente());
+            this.view.getCampoClienteNome().setText(cliente.getNome());
+            if (cliente.getPessoa().equals("Física")) {
+                this.view.getRbPessoaFisica().setSelected(true);
+            } else if (cliente.getPessoa().equals("Jurídica")) {
+                this.view.getRbPessoaJuridica().setSelected(true);
+            }
+            this.view.getCampoClienteCpfCnpj().setText(cliente.getCpfCnpj());
+            this.view.getCampoClienteContato().setText(cliente.getContato());
+            this.view.getCampoClienteLogin().setText(cliente.getLogin());
+            this.view.getCampoClienteSenha().setText(cliente.getSenha());
+        }
     }
 
     @Override

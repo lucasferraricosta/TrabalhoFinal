@@ -27,6 +27,10 @@ public class ManterTrabalhoController implements ActionListener {
         this.view.getBotaoTrabalhoEditar().addActionListener(this);
         this.view.getBotaoTrabalhoExcluir().addActionListener(this);
         this.view.getBotaoTrabalhoVoltar().addActionListener(this);
+        
+        
+        this.view.getListaTrabalhos().getColumnModel().getColumn(0).setPreferredWidth(20);
+        this.view.getListaTrabalhos().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
 
     @Override

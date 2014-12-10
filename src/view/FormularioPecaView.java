@@ -17,8 +17,15 @@ public class FormularioPecaView extends javax.swing.JFrame {
     /**
      * Creates new form FormularioFuncionarioView
      */
-    public FormularioPecaView() {
+    public FormularioPecaView(String acao) {
         initComponents();
+        this.setAcao(acao);
+    }
+    
+    public FormularioPecaView(String acao, int idPeca) {
+        initComponents();
+        this.setAcao(acao);
+        this.setIdPeca(idPeca);
     }
 
     /**
@@ -130,6 +137,25 @@ public class FormularioPecaView extends javax.swing.JFrame {
     private javax.swing.JTextArea textAreaPecaDescricao;
     // End of variables declaration//GEN-END:variables
 
+    private String acao;
+    private int idPeca;
+
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
+
+    public int getIdPeca() {
+        return idPeca;
+    }
+
+    public void setIdPeca(int idPeca) {
+        this.idPeca = idPeca;
+    }
+    
     public JButton getBotaoPecaCancelar() {
         return botaoPecaCancelar;
     }

@@ -36,6 +36,9 @@ public class MenuPrincipalController implements ActionListener {
             AreaAdministradorController controle = new AreaAdministradorController(tela);
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getbMPclient()) {
+            AreaClienteView tela = new AreaClienteView();
+            AreaClienteController controle = new AreaClienteController(tela,1);
+            controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getbMPfunc1()) {
         } else if (e.getSource() == this.view.getbMPsair()) {
             System.exit(0);

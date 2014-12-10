@@ -28,10 +28,8 @@ public class FormularioFuncionarioController implements ActionListener {
             funcionario = funcionarioDAO.retornaDados(this.view.getIdFuncionario());
             this.view.getCampoFuncionarioNome().setText(funcionario.getNome());
             if (funcionario.getSexo().equals("Masculino")) {
-                System.out.print("M");
                 this.view.getRbSexoMasculino().setSelected(true);
             } else if (funcionario.getSexo().equals("Feminino")) {
-                System.out.print("F");
                 this.view.getRbSexoFeminino().setSelected(true);
             }
             this.view.getCampoFuncionarioCpf().setText(funcionario.getCpf());
