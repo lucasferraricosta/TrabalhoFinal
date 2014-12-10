@@ -48,7 +48,7 @@ public class FormularioPecaView extends javax.swing.JFrame {
         textAreaPecaDescricao = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Formulário do Funcionário");
+        setTitle("Formulário de Peça");
         setMinimumSize(new java.awt.Dimension(450, 400));
         setName("formularioFuncionario"); // NOI18N
         setResizable(false);
