@@ -159,4 +159,33 @@ public class FuncionarioDAO {
             return null;
         }
     }
+    
+    public Funcionario logar(String login, String senha) {
+        try {
+            PreparedStatement pstmt;
+            List<Funcionario> listaFuncionarios = new ArrayList<>();
+
+            String sql = "select * from funcionario WHERE login = ? AND senha = ?";
+
+            // Cria a PreparedStatement com o SQL
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, login);
+            pstmt.setString(2, senha);
+            //Executa a query de seleção
+            ResultSet rs = pstmt.executeQuery();
+            Funcionario funcionario = null;
+            while (rs.next()) {
+                funcionario = new Funcionario(rs.getInt("idfuncionario"), rs.getString("nome"), rs.getInt("idade"), rs.getString("sexo"), rs.getString("cpf"), rs.getString("login"), rs.getString("senha"));
+            }
+            rs.close();
+            pstmt.close();
+
+            return funcionario;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }

@@ -34,9 +34,9 @@ public class FormLoginView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         campoLoginlogin = new javax.swing.JTextField();
-        campoLoginsenha = new javax.swing.JTextField();
         bLoginlogin = new javax.swing.JButton();
         bLoginsair = new javax.swing.JButton();
+        campoLoginsenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
@@ -74,8 +74,8 @@ public class FormLoginView extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoLoginlogin)
-                    .addComponent(campoLoginsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoLoginlogin, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(campoLoginsenha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bLoginlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(44, Short.MAX_VALUE))
@@ -128,7 +128,7 @@ public class FormLoginView extends javax.swing.JFrame {
     private javax.swing.JButton bLoginlogin;
     private javax.swing.JButton bLoginsair;
     private javax.swing.JTextField campoLoginlogin;
-    private javax.swing.JTextField campoLoginsenha;
+    private javax.swing.JPasswordField campoLoginsenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

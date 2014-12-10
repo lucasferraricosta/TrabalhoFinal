@@ -160,5 +160,34 @@ public class ClienteDAO {
             return null;
         }
     }
+    
+    public Cliente logar(String login, String senha) {
+        try {
+            PreparedStatement pstmt;
+            List<Cliente> listaClientes = new ArrayList<>();
 
+            String sql = "select * from cliente WHERE login = ? AND senha = ?";
+
+            // Cria a PreparedStatement com o SQL
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, login);
+            pstmt.setString(2, senha);
+            //Executa a query de seleção
+            ResultSet rs = pstmt.executeQuery();
+            Cliente cliente = null;
+            while (rs.next()) {
+                cliente = new Cliente(rs.getInt("idcliente"), rs.getString("nome"), rs.getString("pessoa"), rs.getString("cpf_cnpj"), rs.getString("contato"), rs.getString("login"), rs.getString("senha"));
+            }
+            rs.close();
+            pstmt.close();
+
+            return cliente;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
 }

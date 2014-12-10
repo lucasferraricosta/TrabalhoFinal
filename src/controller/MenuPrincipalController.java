@@ -32,8 +32,8 @@ public class MenuPrincipalController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
         if (e.getSource() == this.view.getbMPadmin()) {
-            AreaAdministradorView tela = new AreaAdministradorView();
-            AreaAdministradorController controle = new AreaAdministradorController(tela);
+            FormLoginView tela = new FormLoginView();
+            FormLoginController controle = new FormLoginController(tela, "admin");
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getbMPclient()) {
             AreaClienteView tela = new AreaClienteView();
