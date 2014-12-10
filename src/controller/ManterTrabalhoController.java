@@ -44,10 +44,14 @@ public class ManterTrabalhoController implements ActionListener {
             TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
             int idTrabalho = Integer.parseInt(this.view.getListaTrabalhos().getValueAt(this.view.getListaTrabalhos().getSelectedRow(), 0).toString());
             Trabalho trabalho = trabalhoDAO.retornaDados(idTrabalho);
+            FuncionarioDAO funcDAO = new FuncionarioDAO();
+            Funcionario func = funcDAO.retornaDados(trabalho.getIdFuncionario());
+            PecaDAO pecaDAO = new PecaDAO();
+            Peca peca = pecaDAO.retornaDados(trabalho.getIdPeca());
             String texto = "Id: " + trabalho.getId() + "\n";
             texto += "Nome: " + trabalho.getNome() + "\n";
-            texto += "Peca: " + trabalho.getIdPeca() + "\n";
-            texto += "Funcionario: " + trabalho.getIdFuncionario()+ "\n";
+            texto += "Peca: " + peca.getNome() + "\n";
+            texto += "Funcionario: " + func.getNome()+ "\n";
             texto += "Data Entrega: " + trabalho.getDataEntrega()+ "\n";
             texto += "Horas Trabalhadas: " + trabalho.getHorasTrabalhadas();
             this.view.getTextAreaDadosTrabalho().setText(texto);

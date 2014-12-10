@@ -41,6 +41,10 @@ public class MenuPrincipalController implements ActionListener {
             controle.getView().setVisible(true);
             controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbMPfunc1()) {
+            AreaFuncionarioView tela = new AreaFuncionarioView();
+            AreaFuncionarioController controle = new AreaFuncionarioController(tela,1);
+            controle.getView().setVisible(true);
+            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbMPsair()) {
             System.exit(0);
         }

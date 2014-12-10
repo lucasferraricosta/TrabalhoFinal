@@ -45,11 +45,11 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         campoTrabalhoNome = new javax.swing.JTextField();
-        campoTrabalhoDataEntrega = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         selectTrabalhoPeca = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         selectTrabalhoFuncionario = new javax.swing.JComboBox();
+        campoTrabalhoDataEntrega = new javax.swing.JFormattedTextField();
         botaoTrabalhoSalvar = new javax.swing.JButton();
         botaoTrabalhoCancelar = new javax.swing.JButton();
 
@@ -68,6 +68,8 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
         jLabel3.setText("Peça:");
 
         jLabel4.setText("Funcionário:");
+
+        campoTrabalhoDataEntrega.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -91,10 +93,9 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoTrabalhoDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(selectTrabalhoPeca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(selectTrabalhoFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(selectTrabalhoPeca, 0, 209, Short.MAX_VALUE)
+                            .addComponent(selectTrabalhoFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoTrabalhoDataEntrega))))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -114,9 +115,9 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
                     .addComponent(selectTrabalhoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoTrabalhoDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(201, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(campoTrabalhoDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         botaoTrabalhoSalvar.setText("Salvar");
@@ -170,7 +171,7 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
     private javax.swing.JButton botaoTrabalhoCancelar;
     private javax.swing.JButton botaoTrabalhoSalvar;
     private javax.swing.ButtonGroup campoFuncionarioSexo;
-    private javax.swing.JTextField campoTrabalhoDataEntrega;
+    private javax.swing.JFormattedTextField campoTrabalhoDataEntrega;
     private javax.swing.JTextField campoTrabalhoNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
