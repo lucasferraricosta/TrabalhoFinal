@@ -62,6 +62,7 @@ public class ManterClienteController implements ActionListener {
             Cliente cliente = new Cliente();
             cliente.setId(idCliente);
             clienteDAO.excluir(cliente);
+            JOptionPane.showMessageDialog(this.getView(), "Cliente excluído com sucesso.");
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoClienteVoltar()) {
             this.view.getTextAreaDadosCliente().setText("");

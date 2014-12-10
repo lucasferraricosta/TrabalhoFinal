@@ -58,9 +58,11 @@ public class FormularioClienteController implements ActionListener {
             model.setSenha(this.view.getCampoClienteSenha().getText());
             if (this.view.getAcao() == "cadastrar") {
                 clienteDAO.cadastrar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Cliente cadastrado com sucesso.");
             } else if (this.view.getAcao() == "editar") {
                 model.setId(this.view.getIdCliente());
                 clienteDAO.alterar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Cliente editado com sucesso.");
             }
             this.view.getCampoClienteNome().setText("");
             this.view.getRbPessoaFisica().setSelected(false);

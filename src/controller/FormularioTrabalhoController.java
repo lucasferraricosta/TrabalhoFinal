@@ -86,9 +86,11 @@ public class FormularioTrabalhoController implements ActionListener {
             model.setIdPeca(idPeca);
             if (this.view.getAcao() == "cadastrar") {
                 trabalhoDAO.cadastrar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Trabalho cadastrado com sucesso.");
             } else if (this.view.getAcao() == "editar") {
                 model.setId(this.view.getIdTrabalho());
                 trabalhoDAO.alterar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Trabalho editado com sucesso.");
             }
             this.view.getCampoTrabalhoNome().setText("");
             this.view.getCampoTrabalhoDataEntrega().setText("");

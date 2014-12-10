@@ -58,9 +58,11 @@ public class FormularioFuncionarioController implements ActionListener {
             model.setSenha(this.view.getCampoFuncionarioSenha().getText());
             if (this.view.getAcao() == "cadastrar") {
                 funcionarioDAO.cadastrar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Funcionário cadastrado com sucesso.");
             } else if (this.view.getAcao() == "editar") {
                 model.setId(this.view.getIdFuncionario());
                 funcionarioDAO.alterar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Funcionário editado com sucesso.");
             }
             this.view.getCampoFuncionarioNome().setText("");
             this.view.getRbSexoMasculino().setSelected(false);

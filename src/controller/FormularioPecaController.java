@@ -48,9 +48,11 @@ public class FormularioPecaController implements ActionListener {
             model.setIdCliente(this.pai.getIdCliente());
             if (this.view.getAcao().equals("cadastrar")) {
                 pecaDAO.cadastrar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Peça cadastrada com sucesso.");
             } else if (this.view.getAcao().equals("editar")) {
                 model.setId(this.view.getIdPeca());
                 pecaDAO.alterar(model);
+                JOptionPane.showMessageDialog(this.getView(), "Peça editada com sucesso.");
             }
             this.view.getCampoPecaNome().setText("");
             this.view.getTextAreaPecaDescricao().setText("");

@@ -62,6 +62,7 @@ public class ManterFuncionarioController implements ActionListener {
             Funcionario funcionario = new Funcionario();
             funcionario.setId(idFuncionario);
             funcionarioDAO.excluir(funcionario);
+            JOptionPane.showMessageDialog(this.getView(), "Funcionário excluído com sucesso.");
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoFuncionarioVoltar()) {
             this.view.getTextAreaDadosFuncionario().setText("");

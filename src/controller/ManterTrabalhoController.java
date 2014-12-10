@@ -61,6 +61,7 @@ public class ManterTrabalhoController implements ActionListener {
             Trabalho trabalho = new Trabalho();
             trabalho.setId(idTrabalho);
             trabalhoDAO.excluir(trabalho);
+            JOptionPane.showMessageDialog(this.getView(), "Trabalho excluído com sucesso.");
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoTrabalhoVoltar()) {
             this.view.getTextAreaDadosTrabalho().setText("");

@@ -64,6 +64,7 @@ public class AreaClienteController implements ActionListener {
             Peca peca = new Peca();
             peca.setId(idPeca);
             pecaDAO.excluir(peca);
+            JOptionPane.showMessageDialog(this.getView(), "Peça excluída com sucesso.");
             this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoPecaVoltar()) {
             this.view.getTextAreaDadosPeca().setText("");
