@@ -54,7 +54,7 @@ public class AreaClienteView extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do Cliente");
         setMinimumSize(new java.awt.Dimension(450, 400));
         setResizable(false);

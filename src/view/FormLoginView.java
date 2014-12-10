@@ -37,7 +37,7 @@ public class FormLoginView extends javax.swing.JFrame {
         bLoginlogin = new javax.swing.JButton();
         bLoginsair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));

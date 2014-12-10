@@ -34,7 +34,7 @@ public class AreaAdministradorView extends javax.swing.JFrame {
         bAdmintrabalhos = new javax.swing.JButton();
         bAdminsair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do Administrador");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));

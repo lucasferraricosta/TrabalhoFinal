@@ -57,12 +57,11 @@ public class FormularioClienteView extends javax.swing.JFrame {
         botaoClienteSalvar = new javax.swing.JButton();
         botaoClienteCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Formulário do Cliente");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));
         setName("formularioFuncionario"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(450, 400));
         setResizable(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados Pessoais"));

@@ -58,7 +58,7 @@ public class FormularioFuncionarioView extends javax.swing.JFrame {
         botaoFuncionarioSalvar = new javax.swing.JButton();
         botaoFuncionarioCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Formulário do Funcionário");
         setMaximumSize(new java.awt.Dimension(450, 400));
         setMinimumSize(new java.awt.Dimension(450, 400));

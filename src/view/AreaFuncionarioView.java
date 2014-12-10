@@ -37,8 +37,8 @@ public class AreaFuncionarioView extends javax.swing.JFrame {
         botaoFuncionarioHoras = new javax.swing.JButton();
         botaoFuncionarioSair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Área do Administrador");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Área do Funcionário");
         setMinimumSize(new java.awt.Dimension(450, 400));
         setName("areaAdministrador"); // NOI18N
         setResizable(false);

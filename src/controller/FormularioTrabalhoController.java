@@ -52,7 +52,7 @@ public class FormularioTrabalhoController implements ActionListener {
         PecaDAO pecaDAO = new PecaDAO();
         List<Peca> listaPecas = pecaDAO.listar();
         for(int i = 0;i<listaPecas.size();i++){
-            selectFuncionario.addElement(listaPecas.get(i).getId()+" - "+listaPecas.get(i).getNome());
+            selectPeca.addElement(listaPecas.get(i).getId()+" - "+listaPecas.get(i).getNome());
             if(listaPecas.get(i).getId() == trabalho.getIdPeca()){
                 indiceSelecionadoPeca = i;
             }

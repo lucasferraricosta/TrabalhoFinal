@@ -51,8 +51,8 @@ public class FormularioTrabalhoView extends javax.swing.JFrame {
         botaoTrabalhoSalvar = new javax.swing.JButton();
         botaoTrabalhoCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Formulário do Funcionário");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Formulário de Trabalho");
         setMinimumSize(new java.awt.Dimension(450, 400));
         setName("formularioFuncionario"); // NOI18N
         setResizable(false);

@@ -39,6 +39,7 @@ public class MenuPrincipalController implements ActionListener {
             AreaClienteView tela = new AreaClienteView();
             AreaClienteController controle = new AreaClienteController(tela,1);
             controle.getView().setVisible(true);
+            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbMPfunc1()) {
         } else if (e.getSource() == this.view.getbMPsair()) {
             System.exit(0);

@@ -59,7 +59,7 @@ public class PecaDAO {
             PreparedStatement pstmt = conn.prepareStatement("UPDATE peca SET "
                     + "nome = ? ,"
                     + "descricao = ?,"
-                    + "idcliente = ?"
+                    + "idcliente = ? "
                     + "WHERE idpeca = ?");
 
             pstmt.setString(1, peca.getNome());

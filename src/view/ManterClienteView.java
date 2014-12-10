@@ -54,8 +54,8 @@ public class ManterClienteView extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Manter Funcionários");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Manter Clientes");
         setMinimumSize(new java.awt.Dimension(450, 400));
         setResizable(false);
 
