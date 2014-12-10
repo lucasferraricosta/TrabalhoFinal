@@ -79,6 +79,26 @@ public class TrabalhoDAO {
         }//Fim try
     }
 
+    public void adicionarHoras(Trabalho trabalho) {
+        try {
+
+            //Executa a query de alteração
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE trabalho SET "
+                    + "horas_trabalhadas = (horas_trabalhadas + ?) "
+                    + "WHERE idtrabalho = ? ");
+
+            pstmt.setInt(1, trabalho.getHorasTrabalhadas());
+            pstmt.setInt(2, trabalho.getId());
+
+            pstmt.execute();
+
+            pstmt.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }//Fim try
+    }
+    
     public void excluir(Trabalho trabalho) {
         try {
 

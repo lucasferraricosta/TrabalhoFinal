@@ -42,7 +42,14 @@ public class AreaFuncionarioController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
         if (e.getSource() == this.view.getBotaoFuncionarioHoras()) {
-            
+            TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
+            int idTrabalho = Integer.parseInt(this.view.getTabelaFuncionarioTrabalhos().getValueAt(this.view.getTabelaFuncionarioTrabalhos().getSelectedRow(), 0).toString());
+            Trabalho trabalho = new Trabalho();
+            trabalho.setId(idTrabalho);
+            trabalho.setHorasTrabalhadas(Integer.parseInt(this.view.getCampoFuncionarioHorasTrabalhadas().getText()));
+            trabalhoDAO.adicionarHoras(trabalho);
+            JOptionPane.showMessageDialog(this.getView(), "Horas Adicionadas com sucesso.");
+            this.atualizaTabela();
         } else if (e.getSource() == this.view.getBotaoFuncionarioSair()) {
             this.view.getCampoFuncionarioHorasTrabalhadas().setText("");
             this.view.dispose();
