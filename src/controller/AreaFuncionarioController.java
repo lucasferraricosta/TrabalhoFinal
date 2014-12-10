@@ -49,6 +49,7 @@ public class AreaFuncionarioController implements ActionListener {
                 trabalho.setHorasTrabalhadas(Integer.parseInt(this.view.getCampoFuncionarioHorasTrabalhadas().getText()));
                 trabalhoDAO.adicionarHoras(trabalho);
                 JOptionPane.showMessageDialog(this.getView(), "Horas Adicionadas com sucesso.");
+                this.view.getCampoFuncionarioHorasTrabalhadas().setText("");
                 this.atualizaTabela();
             } else {
                 JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
