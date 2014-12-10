@@ -93,16 +93,22 @@ public class PecaDAO {
         }//Fim try
     }
 
-    public List<Peca> listar() {
+    public List<Peca> listar(int idCliente) {
 
         try {
             PreparedStatement pstmt;
             List<Peca> listaPecas = new ArrayList<>();
 
             String sql = "select * from peca";
-
             // Cria a PreparedStatement com o SQL
+            if(idCliente != 0){
+                sql += " where idCliente = ?";
+            }
             pstmt = conn.prepareStatement(sql);
+            
+            if(idCliente != 0){
+                pstmt.setInt(1, idCliente);
+            }
             //Executa a query de seleção
             ResultSet rs = pstmt.executeQuery();
 

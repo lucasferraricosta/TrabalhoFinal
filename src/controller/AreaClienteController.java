@@ -91,7 +91,7 @@ public class AreaClienteController implements ActionListener {
         DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getListaPecas().getModel();
         modeloTabela.setNumRows(0);
         PecaDAO pecaDAO = new PecaDAO();
-        List<Peca> lista = pecaDAO.listar();
+        List<Peca> lista = pecaDAO.listar(this.getIdCliente());
         for (Peca peca : lista) {
             modeloTabela.addRow(new Object[]{peca.getId(), peca.getNome()});
         }

@@ -92,7 +92,7 @@ public class ManterTrabalhoController implements ActionListener {
         DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getListaTrabalhos().getModel();
         modeloTabela.setNumRows(0);
         TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
-        List<Trabalho> lista = trabalhoDAO.listar();
+        List<Trabalho> lista = trabalhoDAO.listar(0);
         for (Trabalho trabalho : lista) {
             modeloTabela.addRow(new Object[]{trabalho.getId(), trabalho.getNome()});
         }

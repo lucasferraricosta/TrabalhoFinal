@@ -65,7 +65,7 @@ public class AreaFuncionarioController implements ActionListener {
         DefaultTableModel modeloTabela = (DefaultTableModel) this.view.getTabelaFuncionarioTrabalhos().getModel();
         modeloTabela.setNumRows(0);
         TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
-        List<Trabalho> lista = trabalhoDAO.listar();
+        List<Trabalho> lista = trabalhoDAO.listar(this.getIdFuncionario());
         for (Trabalho trabalho : lista) {
             modeloTabela.addRow(new Object[]{trabalho.getId(), trabalho.getNome(), trabalho.getDataEntrega(), trabalho.getHorasTrabalhadas()});
         }

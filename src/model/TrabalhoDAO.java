@@ -116,7 +116,7 @@ public class TrabalhoDAO {
         }//Fim try
     }
 
-    public List<Trabalho> listar() {
+    public List<Trabalho> listar(int idFuncionario) {
 
         try {
             PreparedStatement pstmt;
@@ -125,8 +125,15 @@ public class TrabalhoDAO {
             String sql = "select * from trabalho";
 
             // Cria a PreparedStatement com o SQL
+            if(idFuncionario != 0){
+                sql += " where idFuncionario = ?";
+            }
             pstmt = conn.prepareStatement(sql);
             //Executa a query de seleção
+            
+            if(idFuncionario != 0){
+                pstmt.setInt(1, idFuncionario);
+            }
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {

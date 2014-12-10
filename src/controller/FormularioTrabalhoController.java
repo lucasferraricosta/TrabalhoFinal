@@ -50,7 +50,7 @@ public class FormularioTrabalhoController implements ActionListener {
         
         DefaultComboBoxModel selectPeca = new DefaultComboBoxModel();
         PecaDAO pecaDAO = new PecaDAO();
-        List<Peca> listaPecas = pecaDAO.listar();
+        List<Peca> listaPecas = pecaDAO.listar(0);
         for(int i = 0;i<listaPecas.size();i++){
             selectPeca.addElement(listaPecas.get(i).getId()+" - "+listaPecas.get(i).getNome());
             if(listaPecas.get(i).getId() == trabalho.getIdPeca()){
