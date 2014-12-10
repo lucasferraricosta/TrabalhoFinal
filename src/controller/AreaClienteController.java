@@ -14,15 +14,15 @@ public class AreaClienteController implements ActionListener {
 
     private AreaClienteView view = null;
     private int idCliente;
-    
+
     public AreaClienteView getView() {
         return this.view;
     }
-    
-    public int getIdCliente(){
+
+    public int getIdCliente() {
         return this.idCliente;
     }
-    
+
     public AreaClienteController(AreaClienteView view, int idCliente) {
         // Aponto para a View  deste Controller
         this.view = view;
@@ -33,8 +33,7 @@ public class AreaClienteController implements ActionListener {
         this.view.getBotaoPecaEditar().addActionListener(this);
         this.view.getBotaoPecaExcluir().addActionListener(this);
         this.view.getBotaoPecaVoltar().addActionListener(this);
-        
-        
+
         this.view.getListaPecas().getColumnModel().getColumn(0).setPreferredWidth(20);
         this.view.getListaPecas().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
@@ -47,25 +46,40 @@ public class AreaClienteController implements ActionListener {
             FormularioPecaController controle = new FormularioPecaController(tela, this);
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getBotaoPecaVisualizar()) {
-            PecaDAO pecaDAO = new PecaDAO();
-            int idPeca = Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString());
-            Peca peca = pecaDAO.retornaDados(idPeca);
-            String texto = "Id: " + peca.getId() + "\n";
-            texto += "Nome: " + peca.getNome() + "\n";
-            texto += "Descrição: " + peca.getDescricao();
-            this.view.getTextAreaDadosPeca().setText(texto);
+            if (this.view.getListaPecas().getSelectedRowCount() > 0) {
+                PecaDAO pecaDAO = new PecaDAO();
+                int idPeca = Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString());
+                Peca peca = pecaDAO.retornaDados(idPeca);
+                String texto = "Id: " + peca.getId() + "\n";
+                texto += "Nome: " + peca.getNome() + "\n";
+                texto += "Descrição: " + peca.getDescricao();
+                this.view.getTextAreaDadosPeca().setText(texto);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoPecaEditar()) {
-            FormularioPecaView tela = new FormularioPecaView("editar", Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString()));
-            FormularioPecaController controle = new FormularioPecaController(tela, this);
-            controle.getView().setVisible(true);
+            if (this.view.getListaPecas().getSelectedRowCount() > 0) {
+                FormularioPecaView tela = new FormularioPecaView("editar", Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString()));
+                FormularioPecaController controle = new FormularioPecaController(tela, this);
+                controle.getView().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoPecaExcluir()) {
-            PecaDAO pecaDAO = new PecaDAO();
-            int idPeca = Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString());
-            Peca peca = new Peca();
-            peca.setId(idPeca);
-            pecaDAO.excluir(peca);
-            JOptionPane.showMessageDialog(this.getView(), "Peça excluída com sucesso.");
-            this.atualizaTabela();
+            if (this.view.getListaPecas().getSelectedRowCount() > 0) {
+                int resposta = JOptionPane.showConfirmDialog(view, "Têm certeza que deseja excluir?");
+                if (resposta == 0) {
+                    PecaDAO pecaDAO = new PecaDAO();
+                    int idPeca = Integer.parseInt(this.view.getListaPecas().getValueAt(this.view.getListaPecas().getSelectedRow(), 0).toString());
+                    Peca peca = new Peca();
+                    peca.setId(idPeca);
+                    pecaDAO.excluir(peca);
+                    JOptionPane.showMessageDialog(this.getView(), "Peça excluída com sucesso.");
+                    this.atualizaTabela();
+                }
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoPecaVoltar()) {
             this.view.getTextAreaDadosPeca().setText("");
             this.view.dispose();

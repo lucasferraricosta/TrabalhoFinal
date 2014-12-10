@@ -27,8 +27,7 @@ public class ManterFuncionarioController implements ActionListener {
         this.view.getBotaoFuncionarioEditar().addActionListener(this);
         this.view.getBotaoFuncionarioExcluir().addActionListener(this);
         this.view.getBotaoFuncionarioVoltar().addActionListener(this);
-        
-        
+
         this.view.getListaFuncionarios().getColumnModel().getColumn(0).setPreferredWidth(20);
         this.view.getListaFuncionarios().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
@@ -41,29 +40,47 @@ public class ManterFuncionarioController implements ActionListener {
             FormularioFuncionarioController controle = new FormularioFuncionarioController(tela, this);
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getBotaoFuncionarioVisualizar()) {
-            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-            int idFuncionario = Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString());
-            Funcionario funcionario = funcionarioDAO.retornaDados(idFuncionario);
-            String texto = "Id: " + funcionario.getId() + "\n";
-            texto += "Nome: " + funcionario.getNome() + "\n";
-            texto += "Sexo: " + funcionario.getSexo() + "\n";
-            texto += "CPF: " + funcionario.getCpf() + "\n";
-            texto += "Idade: " + funcionario.getIdade()+ "\n";
-            texto += "Login: " + funcionario.getLogin() + "\n";
-            texto += "Senha: " + funcionario.getSenha();
-            this.view.getTextAreaDadosFuncionario().setText(texto);
+
+            if (this.view.getListaFuncionarios().getSelectedRowCount() > 0) {
+                FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+                int idFuncionario = Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString());
+                Funcionario funcionario = funcionarioDAO.retornaDados(idFuncionario);
+                String texto = "Id: " + funcionario.getId() + "\n";
+                texto += "Nome: " + funcionario.getNome() + "\n";
+                texto += "Sexo: " + funcionario.getSexo() + "\n";
+                texto += "CPF: " + funcionario.getCpf() + "\n";
+                texto += "Idade: " + funcionario.getIdade() + "\n";
+                texto += "Login: " + funcionario.getLogin() + "\n";
+                texto += "Senha: " + funcionario.getSenha();
+                this.view.getTextAreaDadosFuncionario().setText(texto);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoFuncionarioEditar()) {
-            FormularioFuncionarioView tela = new FormularioFuncionarioView("editar", Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString()));
-            FormularioFuncionarioController controle = new FormularioFuncionarioController(tela, this);
-            controle.getView().setVisible(true);
+
+            if (this.view.getListaFuncionarios().getSelectedRowCount() > 0) {
+                FormularioFuncionarioView tela = new FormularioFuncionarioView("editar", Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString()));
+                FormularioFuncionarioController controle = new FormularioFuncionarioController(tela, this);
+                controle.getView().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoFuncionarioExcluir()) {
-            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-            int idFuncionario = Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString());
-            Funcionario funcionario = new Funcionario();
-            funcionario.setId(idFuncionario);
-            funcionarioDAO.excluir(funcionario);
-            JOptionPane.showMessageDialog(this.getView(), "Funcionário excluído com sucesso.");
-            this.atualizaTabela();
+
+            if (this.view.getListaFuncionarios().getSelectedRowCount() > 0) {
+                int resposta = JOptionPane.showConfirmDialog(view, "Têm certeza que deseja excluir?");
+                if (resposta == 0) {
+                    FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+                    int idFuncionario = Integer.parseInt(this.view.getListaFuncionarios().getValueAt(this.view.getListaFuncionarios().getSelectedRow(), 0).toString());
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.setId(idFuncionario);
+                    funcionarioDAO.excluir(funcionario);
+                    JOptionPane.showMessageDialog(this.getView(), "Funcionário excluído com sucesso.");
+                    this.atualizaTabela();
+                }
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoFuncionarioVoltar()) {
             this.view.getTextAreaDadosFuncionario().setText("");
             this.view.dispose();

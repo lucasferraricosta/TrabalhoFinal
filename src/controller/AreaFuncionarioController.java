@@ -14,15 +14,15 @@ public class AreaFuncionarioController implements ActionListener {
 
     private AreaFuncionarioView view = null;
     private int idFuncionario;
-    
+
     public AreaFuncionarioView getView() {
         return this.view;
     }
-    
-    public int getIdFuncionario(){
+
+    public int getIdFuncionario() {
         return this.idFuncionario;
     }
-    
+
     public AreaFuncionarioController(AreaFuncionarioView view, int idFuncionario) {
         // Aponto para a View  deste Controller
         this.view = view;
@@ -30,8 +30,7 @@ public class AreaFuncionarioController implements ActionListener {
         //Definindo os listeners para os botoes dessa view.
         this.view.getBotaoFuncionarioHoras().addActionListener(this);
         this.view.getBotaoFuncionarioSair().addActionListener(this);
-        
-        
+
         this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(0).setPreferredWidth(30);
         this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(1).setPreferredWidth(30);
         this.view.getTabelaFuncionarioTrabalhos().getColumnModel().getColumn(2).setPreferredWidth(30);
@@ -42,14 +41,18 @@ public class AreaFuncionarioController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Ações da Tela
         if (e.getSource() == this.view.getBotaoFuncionarioHoras()) {
-            TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
-            int idTrabalho = Integer.parseInt(this.view.getTabelaFuncionarioTrabalhos().getValueAt(this.view.getTabelaFuncionarioTrabalhos().getSelectedRow(), 0).toString());
-            Trabalho trabalho = new Trabalho();
-            trabalho.setId(idTrabalho);
-            trabalho.setHorasTrabalhadas(Integer.parseInt(this.view.getCampoFuncionarioHorasTrabalhadas().getText()));
-            trabalhoDAO.adicionarHoras(trabalho);
-            JOptionPane.showMessageDialog(this.getView(), "Horas Adicionadas com sucesso.");
-            this.atualizaTabela();
+            if (this.view.getTabelaFuncionarioTrabalhos().getSelectedRowCount() > 0) {
+                TrabalhoDAO trabalhoDAO = new TrabalhoDAO();
+                int idTrabalho = Integer.parseInt(this.view.getTabelaFuncionarioTrabalhos().getValueAt(this.view.getTabelaFuncionarioTrabalhos().getSelectedRow(), 0).toString());
+                Trabalho trabalho = new Trabalho();
+                trabalho.setId(idTrabalho);
+                trabalho.setHorasTrabalhadas(Integer.parseInt(this.view.getCampoFuncionarioHorasTrabalhadas().getText()));
+                trabalhoDAO.adicionarHoras(trabalho);
+                JOptionPane.showMessageDialog(this.getView(), "Horas Adicionadas com sucesso.");
+                this.atualizaTabela();
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoFuncionarioSair()) {
             this.view.getCampoFuncionarioHorasTrabalhadas().setText("");
             this.view.dispose();

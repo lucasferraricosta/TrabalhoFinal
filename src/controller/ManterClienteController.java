@@ -27,8 +27,7 @@ public class ManterClienteController implements ActionListener {
         this.view.getBotaoClienteEditar().addActionListener(this);
         this.view.getBotaoClienteExcluir().addActionListener(this);
         this.view.getBotaoClienteVoltar().addActionListener(this);
-        
-        
+
         this.view.getListaClientes().getColumnModel().getColumn(0).setPreferredWidth(20);
         this.view.getListaClientes().getColumnModel().getColumn(1).setPreferredWidth(150);
     }
@@ -41,29 +40,44 @@ public class ManterClienteController implements ActionListener {
             FormularioClienteController controle = new FormularioClienteController(tela, this);
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getBotaoClienteVisualizar()) {
-            ClienteDAO clienteDAO = new ClienteDAO();
-            int idCliente = Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString());
-            Cliente cliente = clienteDAO.retornaDados(idCliente);
-            String texto = "Id: " + cliente.getId() + "\n";
-            texto += "Nome: " + cliente.getNome() + "\n";
-            texto += "Pessoa: " + cliente.getPessoa() + "\n";
-            texto += "CPF/CNPJ: " + cliente.getCpfCnpj() + "\n";
-            texto += "Nome do contato: " + cliente.getContato() + "\n";
-            texto += "Login: " + cliente.getLogin() + "\n";
-            texto += "Senha: " + cliente.getSenha();
-            this.view.getTextAreaDadosCliente().setText(texto);
+            if (this.view.getListaClientes().getSelectedRowCount() > 0) {
+                ClienteDAO clienteDAO = new ClienteDAO();
+                int idCliente = Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString());
+                Cliente cliente = clienteDAO.retornaDados(idCliente);
+                String texto = "Id: " + cliente.getId() + "\n";
+                texto += "Nome: " + cliente.getNome() + "\n";
+                texto += "Pessoa: " + cliente.getPessoa() + "\n";
+                texto += "CPF/CNPJ: " + cliente.getCpfCnpj() + "\n";
+                texto += "Nome do contato: " + cliente.getContato() + "\n";
+                texto += "Login: " + cliente.getLogin() + "\n";
+                texto += "Senha: " + cliente.getSenha();
+                this.view.getTextAreaDadosCliente().setText(texto);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoClienteEditar()) {
-            FormularioClienteView tela = new FormularioClienteView("editar", Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString()));
-            FormularioClienteController controle = new FormularioClienteController(tela, this);
-            controle.getView().setVisible(true);
+            if (this.view.getListaClientes().getSelectedRowCount() > 0) {
+                FormularioClienteView tela = new FormularioClienteView("editar", Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString()));
+                FormularioClienteController controle = new FormularioClienteController(tela, this);
+                controle.getView().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoClienteExcluir()) {
-            ClienteDAO clienteDAO = new ClienteDAO();
-            int idCliente = Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString());
-            Cliente cliente = new Cliente();
-            cliente.setId(idCliente);
-            clienteDAO.excluir(cliente);
-            JOptionPane.showMessageDialog(this.getView(), "Cliente excluído com sucesso.");
-            this.atualizaTabela();
+            if (this.view.getListaClientes().getSelectedRowCount() > 0) {
+                int resposta = JOptionPane.showConfirmDialog(view, "Têm certeza que deseja excluir?");
+                if (resposta == 0) {
+                    ClienteDAO clienteDAO = new ClienteDAO();
+                    int idCliente = Integer.parseInt(this.view.getListaClientes().getValueAt(this.view.getListaClientes().getSelectedRow(), 0).toString());
+                    Cliente cliente = new Cliente();
+                    cliente.setId(idCliente);
+                    clienteDAO.excluir(cliente);
+                    JOptionPane.showMessageDialog(this.getView(), "Cliente excluído com sucesso.");
+                    this.atualizaTabela();
+                }
+            } else {
+                JOptionPane.showMessageDialog(view, "Selecione um item na lista.");
+            }
         } else if (e.getSource() == this.view.getBotaoClienteVoltar()) {
             this.view.getTextAreaDadosCliente().setText("");
             this.view.dispose();
