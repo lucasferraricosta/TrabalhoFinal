@@ -36,10 +36,9 @@ public class MenuPrincipalController implements ActionListener {
             FormLoginController controle = new FormLoginController(tela, "admin");
             controle.getView().setVisible(true);
         } else if (e.getSource() == this.view.getbMPclient()) {
-            AreaClienteView tela = new AreaClienteView();
-            AreaClienteController controle = new AreaClienteController(tela,1);
+            FormLoginView tela = new FormLoginView();
+            FormLoginController controle = new FormLoginController(tela, "cliente");
             controle.getView().setVisible(true);
-            controle.atualizaTabela();
         } else if (e.getSource() == this.view.getbMPfunc1()) {
             FormLoginView tela = new FormLoginView();
             FormLoginController controle = new FormLoginController(tela, "funcionario");
