@@ -37,7 +37,6 @@ public class FormLoginController implements ActionListener {
         //Ações da Tela
         if (e.getSource() == this.view.getbLoginlogin()) {
             if (this.area.equals("admin")) {
-                
                 if (this.view.getCampoLoginlogin().getText().equals("admin") && this.view.getCampoLoginsenha().getText().equals("admin")) {
                     AreaAdministradorView tela = new AreaAdministradorView();
                     AreaAdministradorController controle = new AreaAdministradorController(tela);
@@ -50,7 +49,38 @@ public class FormLoginController implements ActionListener {
                     JOptionPane.showMessageDialog(this.getView(), "Dados incorretos.");
                     this.view.getCampoLoginsenha().setText("");
                 }
-
+            } else if (this.area.equals("funcionario")) {
+                FuncionarioDAO funcDAO = new FuncionarioDAO();
+                Funcionario func = funcDAO.logar(this.view.getCampoLoginlogin().getText(), this.view.getCampoLoginsenha().getText());
+                if (func != null) {
+                    AreaFuncionarioView tela = new AreaFuncionarioView();
+                    AreaFuncionarioController controle = new AreaFuncionarioController(tela, func.getId());
+                    JOptionPane.showMessageDialog(this.getView(), "Login efetuado com sucesso.");
+                    controle.getView().setVisible(true);
+                    controle.atualizaTabela();
+                    this.view.getCampoLoginlogin().setText("");
+                    this.view.getCampoLoginsenha().setText("");
+                    this.view.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this.getView(), "Dados incorretos.");
+                    this.view.getCampoLoginsenha().setText("");
+                }
+            } else if (this.area.equals("cliente")) {
+                ClienteDAO clienteDAO = new ClienteDAO();
+                Cliente cliente = clienteDAO.logar(this.view.getCampoLoginlogin().getText(), this.view.getCampoLoginsenha().getText());
+                if (cliente != null) {
+                    AreaClienteView tela = new AreaClienteView();
+                    AreaClienteController controle = new AreaClienteController(tela, cliente.getId());
+                    JOptionPane.showMessageDialog(this.getView(), "Login efetuado com sucesso.");
+                    controle.getView().setVisible(true);
+                    controle.atualizaTabela();
+                    this.view.getCampoLoginlogin().setText("");
+                    this.view.getCampoLoginsenha().setText("");
+                    this.view.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this.getView(), "Dados incorretos.");
+                    this.view.getCampoLoginsenha().setText("");
+                }
             }
         } else if (e.getSource() == this.view.getbLoginsair()) {
             this.view.getCampoLoginlogin().setText("");
